@@ -28,4 +28,6 @@ class DeveloperPreview {
         homeTeam: Team(id: "1044", name: "AFC Bournemouth", shortName: "Bournemouth", tla: "BOU", crest: "https://crests.football-data.org/1044.png"),
         awayTeam: Team(id: "351", name: "Nottingham Forest FC", shortName: "Nottingham", tla: "NOT", crest: "https://crests.football-data.org/351.png"),
         score: Result(winner: nil, duration: "REGULAR", fullTime: nil, halfTime: nil))
+    
+    let team = Team(id: "62", name: "Everton FC", shortName: "Everton", tla: "EVE", crest: "https://crests.football-data.org/62.png")
 }

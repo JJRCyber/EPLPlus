@@ -14,14 +14,14 @@ import Foundation
  */
 
 // MARK: - Matchday
-struct Matchday {
+struct Matchday: Codable {
     let filters: Filters
     let resultSet: ResultSet?
     let matches: [Match]
 }
 
 // MARK: - Filters
-struct Filters {
+struct Filters: Codable {
     let season, matchday: String
 }
 
@@ -63,7 +63,7 @@ struct Season: Codable {
 }
 
 // MARK: - ResultSet
-struct ResultSet {
+struct ResultSet: Codable {
     let count: Int?
     let first, last: String?
     let played: Int?

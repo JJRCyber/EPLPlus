@@ -21,6 +21,9 @@
 		9B37F5532ABB010100043CEF /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B37F5522ABB010100043CEF /* Fixture.swift */; };
 		9B37F5552ABB10F400043CEF /* FixtureRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B37F5542ABB10F400043CEF /* FixtureRowView.swift */; };
 		9B37F5572ABB113700043CEF /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B37F5562ABB113700043CEF /* PreviewProvider.swift */; };
+		9BAE46F22ABC1C650019349B /* Standings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAE46F12ABC1C650019349B /* Standings.swift */; };
+		9BAE46F42ABC1EF90019349B /* TeamsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAE46F32ABC1EF90019349B /* TeamsRowView.swift */; };
+		9BAE46F62ABC2B090019349B /* TeamDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAE46F52ABC2B090019349B /* TeamDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,9 @@
 		9B37F5522ABB010100043CEF /* Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
 		9B37F5542ABB10F400043CEF /* FixtureRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureRowView.swift; sourceTree = "<group>"; };
 		9B37F5562ABB113700043CEF /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
+		9BAE46F12ABC1C650019349B /* Standings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Standings.swift; sourceTree = "<group>"; };
+		9BAE46F32ABC1EF90019349B /* TeamsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsRowView.swift; sourceTree = "<group>"; };
+		9BAE46F52ABC2B090019349B /* TeamDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,13 +83,8 @@
 				9B37F52F2ABAF0BF00043CEF /* EPLPlusApp.swift */,
 				9B37F5332ABAF0C000043CEF /* Assets.xcassets */,
 				9B37F5352ABAF0C000043CEF /* Preview Content */,
-				9B37F5422ABAF63600043CEF /* TabBarView.swift */,
-				9B37F5452ABAF80E00043CEF /* TeamsView.swift */,
 				9B37F5472ABAFA3200043CEF /* CircleButtonView.swift */,
-				9B37F5492ABAFABE00043CEF /* FixturesView.swift */,
-				9B37F54B2ABAFB5800043CEF /* FixturesViewModel.swift */,
-				9B37F54D2ABAFB6E00043CEF /* BaseViewModel.swift */,
-				9B37F5542ABB10F400043CEF /* FixtureRowView.swift */,
+				9B37F54F2ABAFEF100043CEF /* CircleButtonAnimationView.swift */,
 			);
 			path = EPLPlus;
 			sourceTree = "<group>";
@@ -108,7 +109,13 @@
 		9B37F5442ABAF7C300043CEF /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				9B37F54F2ABAFEF100043CEF /* CircleButtonAnimationView.swift */,
+				9B37F5452ABAF80E00043CEF /* TeamsView.swift */,
+				9B37F5422ABAF63600043CEF /* TabBarView.swift */,
+				9B37F54D2ABAFB6E00043CEF /* BaseViewModel.swift */,
+				9B37F5542ABB10F400043CEF /* FixtureRowView.swift */,
+				9B37F54B2ABAFB5800043CEF /* FixturesViewModel.swift */,
+				9B37F5492ABAFABE00043CEF /* FixturesView.swift */,
+				9BAE46F32ABC1EF90019349B /* TeamsRowView.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -117,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				9B37F5522ABB010100043CEF /* Fixture.swift */,
+				9BAE46F12ABC1C650019349B /* Standings.swift */,
+				9BAE46F52ABC2B090019349B /* TeamDetail.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -192,7 +201,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B37F5302ABAF0BF00043CEF /* EPLPlusApp.swift in Sources */,
+				9BAE46F62ABC2B090019349B /* TeamDetail.swift in Sources */,
 				9B37F5572ABB113700043CEF /* PreviewProvider.swift in Sources */,
+				9BAE46F42ABC1EF90019349B /* TeamsRowView.swift in Sources */,
 				9B37F5432ABAF63600043CEF /* TabBarView.swift in Sources */,
 				9B37F54C2ABAFB5800043CEF /* FixturesViewModel.swift in Sources */,
 				9B37F5532ABB010100043CEF /* Fixture.swift in Sources */,
@@ -201,6 +212,7 @@
 				9B37F5552ABB10F400043CEF /* FixtureRowView.swift in Sources */,
 				9B37F5502ABAFEF100043CEF /* CircleButtonAnimationView.swift in Sources */,
 				9B37F54E2ABAFB6E00043CEF /* BaseViewModel.swift in Sources */,
+				9BAE46F22ABC1C650019349B /* Standings.swift in Sources */,
 				9B37F5482ABAFA3200043CEF /* CircleButtonView.swift in Sources */,
 				9B37F53F2ABAF28600043CEF /* Color.swift in Sources */,
 			);
