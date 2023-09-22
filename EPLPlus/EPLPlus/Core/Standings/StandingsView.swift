@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StandingsView: View {
     
-    @EnvironmentObject private var viewModel: TabBarViewModel
+    @StateObject var viewModel = StandingsViewModel()
     
     var body: some View {
         ZStack {
@@ -18,6 +18,19 @@ struct StandingsView: View {
             VStack {
                 headerBar
                 Spacer(minLength: 0)
+                HStack(spacing: 15) {
+                    Spacer()
+                    Text("W")
+                        .frame(width: 15)
+                    Text("D")
+                        .frame(width: 15)
+                    Text("L")
+                        .frame(width: 15)
+                    Text("P")
+                        .frame(width: 20)
+                }
+                .padding(.trailing, 20)
+                .font(.subheadline)
                 List {
                     ForEach(viewModel.standings) { leaguePosition in
                         StandingsRowView(leaguePosition: leaguePosition)
@@ -37,17 +50,6 @@ struct StandingsView: View {
         }
         .padding()
     }
-    
-    private var standingsList: some View {
-        List {
-            ForEach(viewModel.allTeams) { team in
-                TeamsRowView(team: team)
-                    .listRowInsets(.init(top: 0, leading: 0, bottom: 10, trailing: 0))
-                    .listRowSeparator(.hidden)
-            }
-        }
-        .listStyle(.plain)
-    }
 }
 
 struct StandingsView_Previews: PreviewProvider {
@@ -56,7 +58,5 @@ struct StandingsView_Previews: PreviewProvider {
             StandingsView()
                 .toolbar(.hidden, for: .navigationBar)
         }
-        .environmentObject(dev.tabBarViewModel)
-
     }
 }

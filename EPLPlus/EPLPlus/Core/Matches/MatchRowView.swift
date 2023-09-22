@@ -14,7 +14,7 @@ struct MatchRowView: View {
     var body: some View {
         HStack {
             VStack {
-                Circle()
+                TeamCrestView(team: match.homeTeam)
                     .frame(width: 30, height: 30)
                 Text(match.homeTeam.shortName)
             }
@@ -26,7 +26,7 @@ struct MatchRowView: View {
             .foregroundColor(Color.theme.secondaryText)
             .frame(width: UIScreen.main.bounds.width / 3)
             VStack {
-                Circle()
+                TeamCrestView(team: match.awayTeam)
                     .frame(width: 30, height: 30)
                 Text(match.awayTeam.shortName)
             }

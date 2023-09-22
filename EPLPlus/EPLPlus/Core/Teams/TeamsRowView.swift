@@ -13,7 +13,7 @@ struct TeamsRowView: View {
     
     var body: some View {
         HStack {
-            Circle()
+            TeamCrestView(team: team)
                 .frame(width: 30, height: 30)
             Text(team.shortName)
                 .font(.headline)

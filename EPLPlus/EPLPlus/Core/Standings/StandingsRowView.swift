@@ -12,18 +12,29 @@ struct StandingsRowView: View {
     let leaguePosition: LeaguePosition
     
     var body: some View {
-        HStack(spacing: 25) {
+        HStack(spacing: 15) {
             Text("\(leaguePosition.position)")
                 .frame(width: 25)
-            Circle()
-                .frame(width: 20, height: 20)
+                .font(.headline)
+            TeamCrestView(team: leaguePosition.team)
+                .frame(width: 23, height: 23)
             Text("\(leaguePosition.team.shortName)")
                 .frame(alignment: .leading)
             Spacer()
+            Text("\(leaguePosition.won)")
+                .foregroundColor(Color.theme.green)
+                .frame(width: 15)
+            Text("\(leaguePosition.draw)")
+                .foregroundColor(Color.theme.secondaryText)
+                .frame(width: 15)
+            Text("\(leaguePosition.lost)")
+                .foregroundColor(Color.theme.red)
+                .frame(width: 15)
             Text("\(leaguePosition.points)")
                 .frame(width: 20)
+                .foregroundColor(Color.theme.accent)
         }
-        .padding(.horizontal)
+        .font(.subheadline)
     }
 }
 

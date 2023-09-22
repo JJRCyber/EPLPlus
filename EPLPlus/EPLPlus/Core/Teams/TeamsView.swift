@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TeamsView: View {
     
-    @EnvironmentObject private var viewModel: TabBarViewModel
+    @StateObject private var viewModel = TeamsViewModel()
     @State private var showFavourites: Bool = false
     
     var body: some View {

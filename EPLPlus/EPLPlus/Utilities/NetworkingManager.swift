@@ -33,6 +33,16 @@ final class NetworkingManager {
             .eraseToAnyPublisher()
     }
     
+    static func download(url: URL) -> AnyPublisher<Data, Error> {
+        return URLSession.shared.dataTaskPublisher(for: url)
+            // Subscribe on background thread for data downloading
+            .subscribe(on: DispatchQueue.global(qos: .default))
+            .tryMap( { try handleURLResponse(output: $0, url: url)})
+            // Recieve data on main thread as we are updating the UI
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    }
+    
     static func handleURLResponse(output: URLSession.DataTaskPublisher.Output, url: URL?) throws -> Data {
         guard let response = output.response as? HTTPURLResponse,
               response.statusCode >= 200 && response.statusCode < 300 else {
