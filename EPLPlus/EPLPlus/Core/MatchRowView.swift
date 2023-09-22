@@ -18,19 +18,19 @@ struct MatchRowView: View {
                     .frame(width: 30, height: 30)
                 Text(match.homeTeam.shortName)
             }
-            
-            Spacer()
+            .frame(width: UIScreen.main.bounds.width / 3)
             VStack {
                 Text("V")
                 Text("\(match.utcDate.formatted(date: .omitted, time: .shortened))")
             }
             .foregroundColor(Color.theme.secondaryText)
-            Spacer()
+            .frame(width: UIScreen.main.bounds.width / 3)
             VStack {
                 Circle()
                     .frame(width: 30, height: 30)
                 Text(match.awayTeam.shortName)
             }
+            .frame(width: UIScreen.main.bounds.width / 3)
 
         }
         .padding()

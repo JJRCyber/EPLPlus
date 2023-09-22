@@ -15,7 +15,7 @@
 		9B37F5462ABAF80E00043CEF /* TeamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B37F5452ABAF80E00043CEF /* TeamsView.swift */; };
 		9B37F5482ABAFA3200043CEF /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B37F5472ABAFA3200043CEF /* CircleButtonView.swift */; };
 		9B37F54A2ABAFABE00043CEF /* MatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B37F5492ABAFABE00043CEF /* MatchesView.swift */; };
-		9B37F54C2ABAFB5800043CEF /* MathcesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B37F54B2ABAFB5800043CEF /* MathcesViewModel.swift */; };
+		9B37F54C2ABAFB5800043CEF /* MatchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B37F54B2ABAFB5800043CEF /* MatchesViewModel.swift */; };
 		9B37F54E2ABAFB6E00043CEF /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B37F54D2ABAFB6E00043CEF /* BaseViewModel.swift */; };
 		9B37F5502ABAFEF100043CEF /* CircleButtonAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B37F54F2ABAFEF100043CEF /* CircleButtonAnimationView.swift */; };
 		9B37F5532ABB010100043CEF /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B37F5522ABB010100043CEF /* Match.swift */; };
@@ -25,6 +25,7 @@
 		9BAE46F42ABC1EF90019349B /* TeamsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAE46F32ABC1EF90019349B /* TeamsRowView.swift */; };
 		9BAE46F62ABC2B090019349B /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAE46F52ABC2B090019349B /* Team.swift */; };
 		9BAFA2602ABD25EF0067BDA0 /* MatchesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAFA25F2ABD25EF0067BDA0 /* MatchesManager.swift */; };
+		9BAFA2632ABD27F50067BDA0 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAFA2622ABD27F50067BDA0 /* NetworkingManager.swift */; };
 		9BCA2CE52ABC620300F199C3 /* TeamsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCA2CE42ABC620300F199C3 /* TeamsViewModel.swift */; };
 		9BCA2CE72ABD06EE00F199C3 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCA2CE62ABD06EE00F199C3 /* TabBarViewModel.swift */; };
 		9BCA2CE92ABD0D5E00F199C3 /* StandingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCA2CE82ABD0D5E00F199C3 /* StandingsView.swift */; };
@@ -42,7 +43,7 @@
 		9B37F5452ABAF80E00043CEF /* TeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsView.swift; sourceTree = "<group>"; };
 		9B37F5472ABAFA3200043CEF /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
 		9B37F5492ABAFABE00043CEF /* MatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesView.swift; sourceTree = "<group>"; };
-		9B37F54B2ABAFB5800043CEF /* MathcesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathcesViewModel.swift; sourceTree = "<group>"; };
+		9B37F54B2ABAFB5800043CEF /* MatchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewModel.swift; sourceTree = "<group>"; };
 		9B37F54D2ABAFB6E00043CEF /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		9B37F54F2ABAFEF100043CEF /* CircleButtonAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonAnimationView.swift; sourceTree = "<group>"; };
 		9B37F5522ABB010100043CEF /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
@@ -52,6 +53,7 @@
 		9BAE46F32ABC1EF90019349B /* TeamsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsRowView.swift; sourceTree = "<group>"; };
 		9BAE46F52ABC2B090019349B /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		9BAFA25F2ABD25EF0067BDA0 /* MatchesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesManager.swift; sourceTree = "<group>"; };
+		9BAFA2622ABD27F50067BDA0 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		9BCA2CE42ABC620300F199C3 /* TeamsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewModel.swift; sourceTree = "<group>"; };
 		9BCA2CE62ABD06EE00F199C3 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		9BCA2CE82ABD0D5E00F199C3 /* StandingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsView.swift; sourceTree = "<group>"; };
@@ -121,11 +123,12 @@
 		9B37F5442ABAF7C300043CEF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				9BAFA2612ABD27DD0067BDA0 /* Utilities */,
 				9B37F5452ABAF80E00043CEF /* TeamsView.swift */,
 				9B37F5422ABAF63600043CEF /* TabBarView.swift */,
 				9B37F54D2ABAFB6E00043CEF /* BaseViewModel.swift */,
 				9B37F5542ABB10F400043CEF /* MatchRowView.swift */,
-				9B37F54B2ABAFB5800043CEF /* MathcesViewModel.swift */,
+				9B37F54B2ABAFB5800043CEF /* MatchesViewModel.swift */,
 				9B37F5492ABAFABE00043CEF /* MatchesView.swift */,
 				9BAE46F32ABC1EF90019349B /* TeamsRowView.swift */,
 				9BCA2CE42ABC620300F199C3 /* TeamsViewModel.swift */,
@@ -146,6 +149,14 @@
 				9BAE46F52ABC2B090019349B /* Team.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		9BAFA2612ABD27DD0067BDA0 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				9BAFA2622ABD27F50067BDA0 /* NetworkingManager.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,10 +236,11 @@
 				9BCA2CEB2ABD0D7500F199C3 /* StandingsRowView.swift in Sources */,
 				9BAE46F42ABC1EF90019349B /* TeamsRowView.swift in Sources */,
 				9B37F5432ABAF63600043CEF /* TabBarView.swift in Sources */,
+				9BAFA2632ABD27F50067BDA0 /* NetworkingManager.swift in Sources */,
 				9BCA2CE72ABD06EE00F199C3 /* TabBarViewModel.swift in Sources */,
 				9BAFA2602ABD25EF0067BDA0 /* MatchesManager.swift in Sources */,
 				9BCA2CE52ABC620300F199C3 /* TeamsViewModel.swift in Sources */,
-				9B37F54C2ABAFB5800043CEF /* MathcesViewModel.swift in Sources */,
+				9B37F54C2ABAFB5800043CEF /* MatchesViewModel.swift in Sources */,
 				9B37F5532ABB010100043CEF /* Match.swift in Sources */,
 				9B37F54A2ABAFABE00043CEF /* MatchesView.swift in Sources */,
 				9B37F5462ABAF80E00043CEF /* TeamsView.swift in Sources */,

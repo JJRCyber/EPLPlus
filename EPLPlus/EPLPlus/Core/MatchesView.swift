@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MatchesView: View {
     
-    @StateObject private var viewModel = MathcesViewModel()
+    @StateObject private var viewModel = MatchesViewModel()
     
     var body: some View {
         ZStack {
@@ -18,6 +18,12 @@ struct MatchesView: View {
                 .ignoresSafeArea()
             VStack {
                 headerBar
+                List {
+                    ForEach(viewModel.matches) { match in
+                        MatchRowView(match: match)
+                    }
+                }
+                .listStyle(.plain)
                 Spacer(minLength: 0)
             }
         }
