@@ -36,7 +36,6 @@ struct LeaguePosition: Identifiable, Codable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
         self.position = try container.decode(Int.self, forKey: .position)
         self.id = self.position
         self.team = try container.decode(Team.self, forKey: .team)

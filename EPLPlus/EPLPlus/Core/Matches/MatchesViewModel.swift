@@ -8,23 +8,22 @@
 import Foundation
 import Combine
 
-final class MatchesViewModel: ObservableObject {
+final class MatchesViewModel: BaseViewModel {
     
     @Published var matchday: Int = 1
     @Published var matches: [Match] = []
     @Published var animate: Bool = false
-
     
-    private let matchesManager = MatchesManager()
     private var cancellables = Set<AnyCancellable>()
     
-    init() {
+    override init() {
+        super.init()
         addSubscribers()
-        matchesManager.getMatches(matchday: matchday)
+        footballDataManager.getMatches(matchday: matchday)
     }
     
     func addSubscribers() {
-        matchesManager.$matches
+        footballDataManager.$matches
             .sink { [weak self] matches in
                 self?.matches = matches
             }
@@ -34,14 +33,14 @@ final class MatchesViewModel: ObservableObject {
     func decrementMatchday() {
         if matchday > 1 {
             matchday -= 1
-            matchesManager.getMatches(matchday: matchday)
+            footballDataManager.getMatches(matchday: matchday)
         }
     }
     
     func incrementMatchday() {
         if matchday < 38 {
             matchday += 1
-            matchesManager.getMatches(matchday: matchday)
+            footballDataManager.getMatches(matchday: matchday)
         }
     }
 }

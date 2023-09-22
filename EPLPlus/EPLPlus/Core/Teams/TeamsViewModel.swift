@@ -8,20 +8,21 @@
 import Foundation
 import Combine
 
-final class TeamsViewModel: ObservableObject {
+final class TeamsViewModel: BaseViewModel {
     
     @Published var allTeams: [Team] = []
     @Published var favouriteTeams: [Team] = []
     
-    private let standingsManager = StandingsManager()
     private var cancellables = Set<AnyCancellable>()
     
-    init() {
+    override init() {
+        super.init()
         addSubscribers()
+        getTeams()
     }
     
     func addSubscribers() {
-        standingsManager.$allTeams
+        footballDataManager.$allTeams
             .map { teams in
                 teams.sorted { $0.shortName < $1.shortName }
             }
@@ -29,5 +30,9 @@ final class TeamsViewModel: ObservableObject {
                 self?.allTeams = sortedTeams
             }
             .store(in: &cancellables)
+    }
+    
+    private func getTeams() {
+        footballDataManager.getTeams()
     }
 }

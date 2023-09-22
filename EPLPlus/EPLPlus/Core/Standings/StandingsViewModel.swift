@@ -9,22 +9,27 @@ import Foundation
 import Combine
 
 
-final class StandingsViewModel: ObservableObject {
+final class StandingsViewModel: BaseViewModel {
     
     @Published var standings: [LeaguePosition] = []
     
-    private let standingsManager = StandingsManager()
     private var cancellables = Set<AnyCancellable>()
     
-    init() {
+    override init() {
+        super.init()
         addSubscribers()
+        getStandings()
     }
     
     func addSubscribers() {
-        standingsManager.$standings
+        footballDataManager.$standings
             .sink { [weak self] standings in
                 self?.standings = standings
             }
             .store(in: &cancellables)
+    }
+    
+    private func getStandings() {
+        footballDataManager.getStandings()
     }
 }

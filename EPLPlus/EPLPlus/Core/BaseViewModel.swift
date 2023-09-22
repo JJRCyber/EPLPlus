@@ -9,5 +9,6 @@ import Foundation
 
 
 class BaseViewModel: ObservableObject {
+    let footballDataManager = FootballDataAPIManager.instance
     
 }
