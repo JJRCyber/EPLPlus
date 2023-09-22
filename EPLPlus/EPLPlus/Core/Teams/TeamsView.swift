@@ -55,6 +55,7 @@ struct TeamsView: View {
                 TeamsRowView(teamDetail: teamDetail)
                     .listRowInsets(.init(top: 0, leading: 0, bottom: 10, trailing: 0))
                     .listRowSeparator(.hidden)
+                    .listRowBackground(Color.clear)
             }
         }
         .listStyle(.plain)

@@ -18,6 +18,7 @@ class FootballDataAPIManager {
     @Published var allTeams: [TeamDetail] = []
     @Published var standings: [LeaguePosition] = []
     @Published var matches: [Match] = []
+    @Published var currentMatchDay: Int = 0
     var standingsSubscription: AnyCancellable?
     var matchesSubscription: AnyCancellable?
     var teamsSubscription: AnyCancellable?
@@ -34,6 +35,7 @@ class FootballDataAPIManager {
             .decode(type: LeagueTable.self, decoder: JSONDecoder())
             .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] leagueTableResponse in
                 let table = leagueTableResponse.standings[0].table
+                self?.currentMatchDay = leagueTableResponse.season.currentMatchday
                 self?.standings = table
                 self?.standingsSubscription?.cancel()
             })

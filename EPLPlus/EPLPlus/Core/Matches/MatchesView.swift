@@ -21,6 +21,7 @@ struct MatchesView: View {
                 List {
                     ForEach(viewModel.matches) { match in
                         MatchRowView(match: match)
+                            .listRowBackground(Color.clear)
                     }
                 }
                 .listStyle(.plain)

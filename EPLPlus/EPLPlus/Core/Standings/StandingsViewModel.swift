@@ -12,6 +12,7 @@ import Combine
 final class StandingsViewModel: BaseViewModel {
     
     @Published var standings: [LeaguePosition] = []
+    @Published var currentMatchDay = 0
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -25,6 +26,11 @@ final class StandingsViewModel: BaseViewModel {
         footballDataManager.$standings
             .sink { [weak self] standings in
                 self?.standings = standings
+            }
+            .store(in: &cancellables)
+        footballDataManager.$currentMatchDay
+            .sink { [weak self] currentMatchDay in
+                self?.currentMatchDay = currentMatchDay
             }
             .store(in: &cancellables)
     }

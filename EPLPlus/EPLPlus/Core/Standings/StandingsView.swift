@@ -19,6 +19,7 @@ struct StandingsView: View {
                 headerBar
                 Spacer(minLength: 0)
                 HStack(spacing: 15) {
+                    Text("Match Day \(viewModel.currentMatchDay)")
                     Spacer()
                     Text("W")
                         .frame(width: 15)
@@ -29,13 +30,17 @@ struct StandingsView: View {
                     Text("P")
                         .frame(width: 20)
                 }
-                .padding(.trailing, 20)
+                .padding(.horizontal, 20)
                 .font(.subheadline)
+                .foregroundColor(Color.theme.secondaryText)
                 List {
                     ForEach(viewModel.standings) { leaguePosition in
                         StandingsRowView(leaguePosition: leaguePosition)
+                            .listRowBackground(Color.clear)
                     }
+                    
                 }
+
                 .listStyle(.plain)
                 
             }
