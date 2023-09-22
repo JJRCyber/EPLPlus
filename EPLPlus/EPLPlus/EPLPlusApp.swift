@@ -9,12 +9,16 @@ import SwiftUI
 
 @main
 struct EPLPlusApp: App {
+    
+    @StateObject private var viewModel = TabBarViewModel()
+    
     var body: some Scene {
         WindowGroup {
             NavigationStack {
                 TabBarView()
                     .toolbar(.hidden, for: .navigationBar)
             }
+            .environmentObject(viewModel)
         }
     }
 }

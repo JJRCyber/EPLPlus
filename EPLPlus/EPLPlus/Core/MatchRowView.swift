@@ -1,5 +1,5 @@
 //
-//  FixtureRowView.swift
+//  MatchRowView.swift
 //  EPLPlus
 //
 //  Created by Cooper Jacob on 20/9/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FixtureRowView: View {
+struct MatchRowView: View {
     
     let match: Match
     
@@ -39,6 +39,6 @@ struct FixtureRowView: View {
 
 struct FixtureRowView_Previews: PreviewProvider {
     static var previews: some View {
-        FixtureRowView(match: dev.match)
+        MatchRowView(match: dev.match)
     }
 }

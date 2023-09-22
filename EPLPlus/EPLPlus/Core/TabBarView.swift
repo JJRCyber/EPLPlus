@@ -11,22 +11,24 @@ struct TabBarView: View {
     var body: some View {
         TabView {
             Group {
-                Text("Fixtures")
+                MatchesView()
                     .tabItem {
                         Image(systemName: "sportscourt.fill")
                         Text("Fixtures")
                     }
-                Text("Table")
+                StandingsView()
                     .tabItem {
                         Image(systemName: "trophy.fill")
                         Text("Standings")
                     }
-                Text("Teams")
+                TeamsView()
                     .tabItem {
                         Image(systemName: "soccerball")
                         Text("Teams")
                     }
             }
+            .toolbar(.visible, for: .tabBar)
+            .toolbarBackground(.visible, for: .tabBar)
         }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  FixturesViewModel.swift
+//  MatchesViewModel.swift
 //  EPLPlus
 //
 //  Created by Cooper Jacob on 20/9/2023.
@@ -8,7 +8,7 @@
 import Foundation
 
 
-final class FixturesViewModel: BaseViewModel {
+final class MathcesViewModel: BaseViewModel {
     
     @Published var matchday: Int = 1
     @Published var animate: Bool = false

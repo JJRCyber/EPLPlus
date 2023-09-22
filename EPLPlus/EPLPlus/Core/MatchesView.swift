@@ -1,5 +1,5 @@
 //
-//  FixturesView.swift
+//  MatchesView.swift
 //  EPLPlus
 //
 //  Created by Cooper Jacob on 20/9/2023.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct FixturesView: View {
+struct MatchesView: View {
     
-    @StateObject private var viewModel = FixturesViewModel()
+    @StateObject private var viewModel = MathcesViewModel()
     
     var body: some View {
         ZStack {
@@ -43,6 +43,6 @@ struct FixturesView: View {
 
 struct FixturesView_Previews: PreviewProvider {
     static var previews: some View {
-        FixturesView()
+        MatchesView()
     }
 }

@@ -1,5 +1,5 @@
 //
-//  Fixture.swift
+//  Match.swift
 //  EPLPlus
 //
 //  Created by Cooper Jacob on 20/9/2023.
@@ -16,10 +16,9 @@ import Foundation
 // MARK: - Matchday
 struct Matchday: Codable {
     let filters: Filters
-    let resultSet: ResultSet?
+    let resultSet: ResultSet
     let matches: [Match]
 }
-
 // MARK: - Filters
 struct Filters: Codable {
     let season, matchday: String
@@ -27,27 +26,19 @@ struct Filters: Codable {
 
 // MARK: - Match
 struct Match: Identifiable, Codable {
-    let id: String
+    let id: Int
     let utcDate: Date
     let status: String
     let matchday: Int
-    let lastUpdated: Date?
+    let lastUpdated: Date
     let homeTeam, awayTeam: Team
-    let score: Result?
-}
-
-// MARK: - Team
-struct Team: Codable {
-    let id: String
-    let name, shortName, tla: String
-    let crest: String
+    let score: Result
 }
 
 // MARK: - Score
 struct Result: Codable {
     let winner: String?
-    let duration: String
-    let fullTime, halfTime: Score?
+    let fullTime, halfTime: Score
 }
 
 // MARK: - Time
@@ -55,16 +46,9 @@ struct Score: Codable {
     let home, away: Int?
 }
 
-// MARK: - Season
-struct Season: Codable {
-    let id: String
-    let startDate, endDate: String?
-    let currentMatchday: Int?
-}
-
 // MARK: - ResultSet
 struct ResultSet: Codable {
-    let count: Int?
-    let first, last: String?
-    let played: Int?
+    let count: Int
+    let first, last: String
+    let played: Int
 }

@@ -15,9 +15,13 @@ struct TeamsRowView: View {
         HStack {
             Circle()
                 .frame(width: 30, height: 30)
-            Spacer()
             Text(team.shortName)
                 .font(.headline)
+                .padding()
+            Spacer()
+            Text(team.tla)
+                .font(.headline)
+                .foregroundColor(Color.theme.secondaryText)
             Image(systemName: "chevron.right")
                 .padding()
         }

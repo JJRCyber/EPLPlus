@@ -14,16 +14,22 @@
 		9B37F5432ABAF63600043CEF /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B37F5422ABAF63600043CEF /* TabBarView.swift */; };
 		9B37F5462ABAF80E00043CEF /* TeamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B37F5452ABAF80E00043CEF /* TeamsView.swift */; };
 		9B37F5482ABAFA3200043CEF /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B37F5472ABAFA3200043CEF /* CircleButtonView.swift */; };
-		9B37F54A2ABAFABE00043CEF /* FixturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B37F5492ABAFABE00043CEF /* FixturesView.swift */; };
-		9B37F54C2ABAFB5800043CEF /* FixturesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B37F54B2ABAFB5800043CEF /* FixturesViewModel.swift */; };
+		9B37F54A2ABAFABE00043CEF /* MatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B37F5492ABAFABE00043CEF /* MatchesView.swift */; };
+		9B37F54C2ABAFB5800043CEF /* MathcesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B37F54B2ABAFB5800043CEF /* MathcesViewModel.swift */; };
 		9B37F54E2ABAFB6E00043CEF /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B37F54D2ABAFB6E00043CEF /* BaseViewModel.swift */; };
 		9B37F5502ABAFEF100043CEF /* CircleButtonAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B37F54F2ABAFEF100043CEF /* CircleButtonAnimationView.swift */; };
-		9B37F5532ABB010100043CEF /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B37F5522ABB010100043CEF /* Fixture.swift */; };
-		9B37F5552ABB10F400043CEF /* FixtureRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B37F5542ABB10F400043CEF /* FixtureRowView.swift */; };
+		9B37F5532ABB010100043CEF /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B37F5522ABB010100043CEF /* Match.swift */; };
+		9B37F5552ABB10F400043CEF /* MatchRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B37F5542ABB10F400043CEF /* MatchRowView.swift */; };
 		9B37F5572ABB113700043CEF /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B37F5562ABB113700043CEF /* PreviewProvider.swift */; };
 		9BAE46F22ABC1C650019349B /* Standings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAE46F12ABC1C650019349B /* Standings.swift */; };
 		9BAE46F42ABC1EF90019349B /* TeamsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAE46F32ABC1EF90019349B /* TeamsRowView.swift */; };
-		9BAE46F62ABC2B090019349B /* TeamDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAE46F52ABC2B090019349B /* TeamDetail.swift */; };
+		9BAE46F62ABC2B090019349B /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAE46F52ABC2B090019349B /* Team.swift */; };
+		9BAFA2602ABD25EF0067BDA0 /* MatchesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAFA25F2ABD25EF0067BDA0 /* MatchesManager.swift */; };
+		9BCA2CE52ABC620300F199C3 /* TeamsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCA2CE42ABC620300F199C3 /* TeamsViewModel.swift */; };
+		9BCA2CE72ABD06EE00F199C3 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCA2CE62ABD06EE00F199C3 /* TabBarViewModel.swift */; };
+		9BCA2CE92ABD0D5E00F199C3 /* StandingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCA2CE82ABD0D5E00F199C3 /* StandingsView.swift */; };
+		9BCA2CEB2ABD0D7500F199C3 /* StandingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCA2CEA2ABD0D7500F199C3 /* StandingsRowView.swift */; };
+		9BCA2CED2ABD101100F199C3 /* StandingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCA2CEC2ABD101100F199C3 /* StandingsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,16 +41,22 @@
 		9B37F5422ABAF63600043CEF /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		9B37F5452ABAF80E00043CEF /* TeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsView.swift; sourceTree = "<group>"; };
 		9B37F5472ABAFA3200043CEF /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
-		9B37F5492ABAFABE00043CEF /* FixturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixturesView.swift; sourceTree = "<group>"; };
-		9B37F54B2ABAFB5800043CEF /* FixturesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixturesViewModel.swift; sourceTree = "<group>"; };
+		9B37F5492ABAFABE00043CEF /* MatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesView.swift; sourceTree = "<group>"; };
+		9B37F54B2ABAFB5800043CEF /* MathcesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathcesViewModel.swift; sourceTree = "<group>"; };
 		9B37F54D2ABAFB6E00043CEF /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		9B37F54F2ABAFEF100043CEF /* CircleButtonAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonAnimationView.swift; sourceTree = "<group>"; };
-		9B37F5522ABB010100043CEF /* Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
-		9B37F5542ABB10F400043CEF /* FixtureRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureRowView.swift; sourceTree = "<group>"; };
+		9B37F5522ABB010100043CEF /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		9B37F5542ABB10F400043CEF /* MatchRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchRowView.swift; sourceTree = "<group>"; };
 		9B37F5562ABB113700043CEF /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		9BAE46F12ABC1C650019349B /* Standings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Standings.swift; sourceTree = "<group>"; };
 		9BAE46F32ABC1EF90019349B /* TeamsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsRowView.swift; sourceTree = "<group>"; };
-		9BAE46F52ABC2B090019349B /* TeamDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetail.swift; sourceTree = "<group>"; };
+		9BAE46F52ABC2B090019349B /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		9BAFA25F2ABD25EF0067BDA0 /* MatchesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesManager.swift; sourceTree = "<group>"; };
+		9BCA2CE42ABC620300F199C3 /* TeamsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewModel.swift; sourceTree = "<group>"; };
+		9BCA2CE62ABD06EE00F199C3 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
+		9BCA2CE82ABD0D5E00F199C3 /* StandingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsView.swift; sourceTree = "<group>"; };
+		9BCA2CEA2ABD0D7500F199C3 /* StandingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsRowView.swift; sourceTree = "<group>"; };
+		9BCA2CEC2ABD101100F199C3 /* StandingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,10 +124,16 @@
 				9B37F5452ABAF80E00043CEF /* TeamsView.swift */,
 				9B37F5422ABAF63600043CEF /* TabBarView.swift */,
 				9B37F54D2ABAFB6E00043CEF /* BaseViewModel.swift */,
-				9B37F5542ABB10F400043CEF /* FixtureRowView.swift */,
-				9B37F54B2ABAFB5800043CEF /* FixturesViewModel.swift */,
-				9B37F5492ABAFABE00043CEF /* FixturesView.swift */,
+				9B37F5542ABB10F400043CEF /* MatchRowView.swift */,
+				9B37F54B2ABAFB5800043CEF /* MathcesViewModel.swift */,
+				9B37F5492ABAFABE00043CEF /* MatchesView.swift */,
 				9BAE46F32ABC1EF90019349B /* TeamsRowView.swift */,
+				9BCA2CE42ABC620300F199C3 /* TeamsViewModel.swift */,
+				9BCA2CE62ABD06EE00F199C3 /* TabBarViewModel.swift */,
+				9BCA2CE82ABD0D5E00F199C3 /* StandingsView.swift */,
+				9BCA2CEA2ABD0D7500F199C3 /* StandingsRowView.swift */,
+				9BCA2CEC2ABD101100F199C3 /* StandingsManager.swift */,
+				9BAFA25F2ABD25EF0067BDA0 /* MatchesManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -123,9 +141,9 @@
 		9B37F5512ABB00F200043CEF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9B37F5522ABB010100043CEF /* Fixture.swift */,
+				9B37F5522ABB010100043CEF /* Match.swift */,
 				9BAE46F12ABC1C650019349B /* Standings.swift */,
-				9BAE46F52ABC2B090019349B /* TeamDetail.swift */,
+				9BAE46F52ABC2B090019349B /* Team.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -201,17 +219,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B37F5302ABAF0BF00043CEF /* EPLPlusApp.swift in Sources */,
-				9BAE46F62ABC2B090019349B /* TeamDetail.swift in Sources */,
+				9BCA2CED2ABD101100F199C3 /* StandingsManager.swift in Sources */,
+				9BAE46F62ABC2B090019349B /* Team.swift in Sources */,
 				9B37F5572ABB113700043CEF /* PreviewProvider.swift in Sources */,
+				9BCA2CEB2ABD0D7500F199C3 /* StandingsRowView.swift in Sources */,
 				9BAE46F42ABC1EF90019349B /* TeamsRowView.swift in Sources */,
 				9B37F5432ABAF63600043CEF /* TabBarView.swift in Sources */,
-				9B37F54C2ABAFB5800043CEF /* FixturesViewModel.swift in Sources */,
-				9B37F5532ABB010100043CEF /* Fixture.swift in Sources */,
-				9B37F54A2ABAFABE00043CEF /* FixturesView.swift in Sources */,
+				9BCA2CE72ABD06EE00F199C3 /* TabBarViewModel.swift in Sources */,
+				9BAFA2602ABD25EF0067BDA0 /* MatchesManager.swift in Sources */,
+				9BCA2CE52ABC620300F199C3 /* TeamsViewModel.swift in Sources */,
+				9B37F54C2ABAFB5800043CEF /* MathcesViewModel.swift in Sources */,
+				9B37F5532ABB010100043CEF /* Match.swift in Sources */,
+				9B37F54A2ABAFABE00043CEF /* MatchesView.swift in Sources */,
 				9B37F5462ABAF80E00043CEF /* TeamsView.swift in Sources */,
-				9B37F5552ABB10F400043CEF /* FixtureRowView.swift in Sources */,
+				9B37F5552ABB10F400043CEF /* MatchRowView.swift in Sources */,
 				9B37F5502ABAFEF100043CEF /* CircleButtonAnimationView.swift in Sources */,
 				9B37F54E2ABAFB6E00043CEF /* BaseViewModel.swift in Sources */,
+				9BCA2CE92ABD0D5E00F199C3 /* StandingsView.swift in Sources */,
 				9BAE46F22ABC1C650019349B /* Standings.swift in Sources */,
 				9B37F5482ABAFA3200043CEF /* CircleButtonView.swift in Sources */,
 				9B37F53F2ABAF28600043CEF /* Color.swift in Sources */,
