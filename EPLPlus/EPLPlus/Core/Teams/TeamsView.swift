@@ -51,8 +51,8 @@ struct TeamsView: View {
     
     private var allTeamsList: some View {
         List {
-            ForEach(viewModel.allTeams) { team in
-                TeamsRowView(team: team)
+            ForEach(viewModel.allTeams) { teamDetail in
+                TeamsRowView(teamDetail: teamDetail)
                     .listRowInsets(.init(top: 0, leading: 0, bottom: 10, trailing: 0))
                     .listRowSeparator(.hidden)
             }
@@ -62,8 +62,8 @@ struct TeamsView: View {
     
     private var favouriteTeamsList: some View {
         List {
-            ForEach(viewModel.favouriteTeams) { team in
-                TeamsRowView(team: team)
+            ForEach(viewModel.favouriteTeams) { teamDetail in
+                TeamsRowView(teamDetail: teamDetail)
                     .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 0))
                     .listRowSeparator(.hidden)
             }

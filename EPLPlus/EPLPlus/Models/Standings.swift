@@ -64,9 +64,4 @@ struct LeaguePosition: Identifiable, Codable {
     }
 }
 
-// MARK: - Team
-struct Team: Identifiable, Codable {
-    let id: Int
-    let name, shortName, tla: String
-    let crest: String
-}
+

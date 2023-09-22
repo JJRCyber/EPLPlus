@@ -23,13 +23,35 @@ struct TeamDetail: Identifiable, Codable {
     let clubColors, venue: String
     let coach: Coach
     let squad: [Squad]
-    let lastUpdated: Date
+}
+
+// MARK: - Team
+struct Team: Identifiable, Codable {
+    let id: Int
+    let name, shortName, tla: String
+    let crest: String
+    
+    init(teamDetail: TeamDetail) {
+        self.id = teamDetail.id
+        self.name = teamDetail.name
+        self.shortName = teamDetail.shortName
+        self.tla = teamDetail.tla
+        self.crest = teamDetail.crest
+    }
+    
+    init(id: Int, name: String, shortName: String, tla: String, crest: String) {
+        self.id = id
+        self.name = name
+        self.shortName = shortName
+        self.tla = tla
+        self.crest = crest
+    }
 }
 
 // MARK: - Coach
 struct Coach: Codable {
     let id: Int
-    let firstName, lastName, name, dateOfBirth: String
+    let name: String
     let nationality: String
 }
 

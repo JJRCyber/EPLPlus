@@ -15,11 +15,12 @@ class FootballDataAPIManager {
     
     private let apiKey = "a0d0864a57a7411193ae93133a296507"
     
-    @Published var allTeams: [Team] = []
+    @Published var allTeams: [TeamDetail] = []
     @Published var standings: [LeaguePosition] = []
     @Published var matches: [Match] = []
     var standingsSubscription: AnyCancellable?
     var matchesSubscription: AnyCancellable?
+    var teamsSubscription: AnyCancellable?
     
     // Function to retrieve standings from API using combine
     func getStandings() {
@@ -42,20 +43,15 @@ class FootballDataAPIManager {
     func getTeams() {
         print("Downloading Teams")
         // Setup url and HTTP headers as outlined on https://docs.football-data.org/general/v4/competition.html
-        guard let url = URL(string: "https://api.football-data.org/v4/competitions/PL/standings") else { return }
+        guard let url = URL(string: "https://api.football-data.org/v4/competitions/PL/teams") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue(apiKey, forHTTPHeaderField: "X-Auth-Token")
-        standingsSubscription = NetworkingManager.download(request: request)
-            .decode(type: LeagueTable.self, decoder: JSONDecoder())
-            .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] leagueTableResponse in
-                let table = leagueTableResponse.standings[0].table
-                var currentTeams: [Team] = []
-                for standing in table {
-                    currentTeams.append(standing.team)
-                }
-                self?.allTeams = currentTeams
-                self?.standingsSubscription?.cancel()
+        teamsSubscription = NetworkingManager.download(request: request)
+            .decode(type: Teams.self, decoder: JSONDecoder())
+            .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] teamsResponse in
+                self?.allTeams = teamsResponse.teams
+                self?.teamsSubscription?.cancel()
             })
     }
     

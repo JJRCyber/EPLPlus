@@ -10,8 +10,8 @@ import Combine
 
 final class TeamsViewModel: BaseViewModel {
     
-    @Published var allTeams: [Team] = []
-    @Published var favouriteTeams: [Team] = []
+    @Published var allTeams: [TeamDetail] = []
+    @Published var favouriteTeams: [TeamDetail] = []
     
     private var cancellables = Set<AnyCancellable>()
     

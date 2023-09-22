@@ -32,6 +32,7 @@ class DeveloperPreview {
         score: Result(winner: nil, fullTime: Score(home: nil, away: nil), halfTime: Score(home: nil, away: nil)))
     
     let team = Team(id: 62, name: "Everton FC", shortName: "Everton", tla: "EVE", crest: "https://crests.football-data.org/62.png")
+    let teamDetail = TeamDetail(id: 62, name: "Everton FC", shortName: "Everton", tla: "EVE", crest: "https://crests.football-data.org/62.png", address: "Goodison Park Liverpool L4 4EL", website: "http://www.evertonfc.com", founded: 1878, clubColors: "Blue / White", venue: "Goodison Park", coach: Coach(id: 11584, name: "Sean Dyche", nationality: "England"), squad: [])
     
     let leaguePosition = LeaguePosition(position: 1, team: Team(id: 62, name: "Everton FC", shortName: "Everton", tla: "EVE", crest: "https://crests.football-data.org/62.png"), playedGames: 10, won: 8, draw: 1, lost: 1, points: 25, goalsFor: 30, goalsAgainst: 10, goalDifference: 20)
 }

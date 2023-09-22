@@ -9,17 +9,17 @@ import SwiftUI
 
 struct TeamsRowView: View {
     
-    let team: Team
+    let teamDetail: TeamDetail
     
     var body: some View {
         HStack {
-            TeamCrestView(team: team)
+            TeamCrestView(team: Team(teamDetail: teamDetail))
                 .frame(width: 30, height: 30)
-            Text(team.shortName)
+            Text(teamDetail.shortName)
                 .font(.headline)
                 .padding()
             Spacer()
-            Text(team.tla)
+            Text(teamDetail.tla)
                 .font(.headline)
                 .foregroundColor(Color.theme.secondaryText)
             Image(systemName: "chevron.right")
@@ -31,6 +31,6 @@ struct TeamsRowView: View {
 
 struct TeamsRowView_Previews: PreviewProvider {
     static var previews: some View {
-        TeamsRowView(team: dev.team)
+        TeamsRowView(teamDetail: dev.teamDetail)
     }
 }
