@@ -7,30 +7,25 @@
 
 import SwiftUI
 
+// View for matches on given match day
 struct MatchesView: View {
     
     @StateObject private var viewModel = MatchesViewModel()
     
     var body: some View {
         ZStack {
-            // Background
             Color.theme.background
                 .ignoresSafeArea()
             VStack {
                 headerBar
-                List {
-                    ForEach(viewModel.matches) { match in
-                        MatchRowView(match: match)
-                            .listRowBackground(Color.clear)
-                    }
-                }
-                .listStyle(.plain)
+                matchList
                 Spacer(minLength: 0)
             }
         }
     }
     
-    var headerBar: some View {
+    // Buttons to increment and decrement matchday + title
+    private var headerBar: some View {
         HStack {
             CircleButtonView(iconName: "chevron.left")
                 .onTapGesture {
@@ -45,6 +40,17 @@ struct MatchesView: View {
                 }
         }
         .padding(.horizontal)
+    }
+    
+    // Loops over all matches on a given matchday
+    private var matchList: some View {
+        List {
+            ForEach(viewModel.matches) { match in
+                MatchRowView(match: match)
+                    .listRowBackground(Color.clear)
+            }
+        }
+        .listStyle(.plain)
     }
 }
 

@@ -8,10 +8,9 @@
 import Foundation
 import SwiftUI
 
+// Extends Color for easy access to theme colors
 extension Color {
-
     static let theme = ColorTheme()
-    
 }
 
 struct ColorTheme {

@@ -8,19 +8,25 @@
 import Foundation
 import Combine
 
+// View model for teams view
+// Inherits from BaseViewModel
 final class TeamsViewModel: BaseViewModel {
     
+    // Published arrays for allTeams and favouriteTeams
     @Published var allTeams: [TeamDetail] = []
     @Published var favouriteTeams: [TeamDetail] = []
     
+    // Stores cancellable downloads
     private var cancellables = Set<AnyCancellable>()
     
+    // Override init
     override init() {
         super.init()
         addSubscribers()
         getTeams()
     }
     
+    // Subscribes to teams publisher from footballDataManager
     func addSubscribers() {
         footballDataManager.$allTeams
             .map { teams in
@@ -32,6 +38,7 @@ final class TeamsViewModel: BaseViewModel {
             .store(in: &cancellables)
     }
     
+    // Retrieves teams from FootballDataManager
     private func getTeams() {
         footballDataManager.getTeams()
     }

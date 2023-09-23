@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// Root view of app
+// 3 tabs for navigating to various views
 struct TabBarView: View {
     var body: some View {
         TabView {

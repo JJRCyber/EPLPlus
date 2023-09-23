@@ -7,6 +7,13 @@
 
 import SwiftUI
 
+/* Displays each match row:
+ - Home team name + crest
+ - Time if incomplete
+ - Score if complete
+ - Away team name + crest
+ */
+
 struct MatchRowView: View {
     
     let match: Match

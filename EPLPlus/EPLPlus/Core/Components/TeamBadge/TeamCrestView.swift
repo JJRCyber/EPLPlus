@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// View for team crest
 struct TeamCrestView: View {
     
     @StateObject var viewModel: TeamCrestViewModel
@@ -15,6 +16,7 @@ struct TeamCrestView: View {
         _viewModel = StateObject(wrappedValue: TeamCrestViewModel(team: team))
     }
     
+    // View changes based on loading progess of badge image
     var body: some View {
         ZStack {
             if let badgeImage = viewModel.badgeImage {

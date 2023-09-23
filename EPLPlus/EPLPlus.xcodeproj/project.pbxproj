@@ -107,7 +107,6 @@
 				9B37F52F2ABAF0BF00043CEF /* EPLPlusApp.swift */,
 				9B37F5332ABAF0C000043CEF /* Assets.xcassets */,
 				9B37F5352ABAF0C000043CEF /* Preview Content */,
-				9B37F5472ABAFA3200043CEF /* CircleButtonView.swift */,
 			);
 			path = EPLPlus;
 			sourceTree = "<group>";
@@ -183,9 +182,9 @@
 		9BAFA2662ABD34420067BDA0 /* Matches */ = {
 			isa = PBXGroup;
 			children = (
-				9B37F5542ABB10F400043CEF /* MatchRowView.swift */,
-				9B37F54B2ABAFB5800043CEF /* MatchesViewModel.swift */,
 				9B37F5492ABAFABE00043CEF /* MatchesView.swift */,
+				9B37F54B2ABAFB5800043CEF /* MatchesViewModel.swift */,
+				9B37F5542ABB10F400043CEF /* MatchRowView.swift */,
 			);
 			path = Matches;
 			sourceTree = "<group>";
@@ -213,6 +212,7 @@
 		9BAFA2692ABD346B0067BDA0 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				9B37F5472ABAFA3200043CEF /* CircleButtonView.swift */,
 				9BAFA26A2ABD34730067BDA0 /* TeamBadge */,
 			);
 			path = Components;

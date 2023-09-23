@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Row view for each team
 struct TeamsRowView: View {
     
     let teamDetail: TeamDetail
@@ -20,6 +21,7 @@ struct TeamsRowView: View {
                 .padding()
             Spacer()
             Text(teamDetail.tla)
+                .frame(width: 45, alignment: .leading)
                 .font(.headline)
                 .foregroundColor(Color.theme.secondaryText)
             Image(systemName: "chevron.right")

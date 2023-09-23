@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+// Extends PreviewProvider for creation of objects to be used when previewing views
 extension PreviewProvider {
     static var dev: DeveloperPreview {
         return DeveloperPreview.instance

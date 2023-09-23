@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Circle buttons used in header bars
 struct CircleButtonView: View {
     
     let iconName: String

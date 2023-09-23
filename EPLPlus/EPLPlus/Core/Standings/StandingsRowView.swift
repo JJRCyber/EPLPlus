@@ -7,9 +7,19 @@
 
 import SwiftUI
 
+// Row view for each league position
 struct StandingsRowView: View {
     
     let leaguePosition: LeaguePosition
+    
+    /* Displays:
+     - League Position
+     - Team Name
+     - Wins
+     - Draws
+     - Losses
+     - Points
+     */
     
     var body: some View {
         HStack(spacing: 15) {

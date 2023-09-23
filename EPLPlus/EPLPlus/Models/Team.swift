@@ -7,12 +7,12 @@
 
 import Foundation
 
-// MARK: - Teams
+// Contains array of TeamDetail
 struct Teams: Codable {
     let teams: [TeamDetail]
 }
 
-// MARK: - Team
+// Team detail struct for use in team information page
 struct TeamDetail: Identifiable, Codable {
     let id: Int
     let name, shortName, tla: String
@@ -22,15 +22,16 @@ struct TeamDetail: Identifiable, Codable {
     let founded: Int?
     let clubColors, venue: String
     let coach: Coach
-    let squad: [Squad]
+    let squad: [Player]
 }
 
-// MARK: - Team
+// Basic team struct that is used when displaying teams in lists
 struct Team: Identifiable, Codable {
     let id: Int
     let name, shortName, tla: String
     let crest: String
     
+    // Custom init from TeamDetail struct
     init(teamDetail: TeamDetail) {
         self.id = teamDetail.id
         self.name = teamDetail.name
@@ -39,6 +40,7 @@ struct Team: Identifiable, Codable {
         self.crest = teamDetail.crest
     }
     
+    // Default init
     init(id: Int, name: String, shortName: String, tla: String, crest: String) {
         self.id = id
         self.name = name
@@ -48,15 +50,15 @@ struct Team: Identifiable, Codable {
     }
 }
 
-// MARK: - Coach
+// Struct for coach
 struct Coach: Codable {
     let id: Int
     let name: String
     let nationality: String
 }
 
-// MARK: - Squad
-struct Squad: Identifiable, Codable {
+// Struct for player
+struct Player: Identifiable, Codable {
     let id: Int
     let name: String
     let position: String?

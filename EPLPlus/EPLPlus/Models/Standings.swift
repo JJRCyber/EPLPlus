@@ -7,25 +7,25 @@
 
 import Foundation
 
-// MARK: - Matchday
+// Struct for league table
 struct LeagueTable: Codable {
     let season: Season
     let standings: [Standing]
 }
 
-// MARK: - Season
+// Struct for season
 struct Season: Codable {
     let id: Int
     let startDate, endDate: String
     let currentMatchday: Int
 }
 
-// MARK: - Standing
+// Contains actual table object with leaguepositions
 struct Standing: Codable {
     let table: [LeaguePosition]
 }
 
-// MARK: - Table
+// League position struct with information on team at each position
 struct LeaguePosition: Identifiable, Codable {
     let id: Int
     let position: Int
@@ -34,6 +34,8 @@ struct LeaguePosition: Identifiable, Codable {
     let won, draw, lost, points: Int
     let goalsFor, goalsAgainst, goalDifference: Int
     
+    // Custom init from decoder as API response does not contain ID
+    // ID is required to conform to identifiable
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.position = try container.decode(Int.self, forKey: .position)
@@ -49,6 +51,7 @@ struct LeaguePosition: Identifiable, Codable {
         self.goalDifference = try container.decode(Int.self, forKey: .goalDifference)
     }
     
+    // Default init from passed parameters
     init(position: Int, team: Team, playedGames: Int, won: Int, draw: Int, lost: Int, points: Int, goalsFor: Int, goalsAgainst: Int, goalDifference: Int) {
         self.id = position
         self.position = position

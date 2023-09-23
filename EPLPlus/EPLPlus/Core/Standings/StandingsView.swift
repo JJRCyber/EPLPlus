@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Displays league table
 struct StandingsView: View {
     
     @StateObject var viewModel = StandingsViewModel()
@@ -18,42 +19,49 @@ struct StandingsView: View {
             VStack {
                 headerBar
                 Spacer(minLength: 0)
-                HStack(spacing: 15) {
-                    Text("Match Day \(viewModel.currentMatchDay)")
-                    Spacer()
-                    Text("W")
-                        .frame(width: 15)
-                    Text("D")
-                        .frame(width: 15)
-                    Text("L")
-                        .frame(width: 15)
-                    Text("P")
-                        .frame(width: 20)
-                }
-                .padding(.horizontal, 20)
-                .font(.subheadline)
-                .foregroundColor(Color.theme.secondaryText)
-                List {
-                    ForEach(viewModel.standings) { leaguePosition in
-                        StandingsRowView(leaguePosition: leaguePosition)
-                            .listRowBackground(Color.clear)
-                    }
-                    
-                }
-
-                .listStyle(.plain)
-                
+                columnHeaders
+                standingsList
             }
         }
-
     }
     
+    // Header bar displayed at top
     private var headerBar: some View {
         HStack {
             Text("Standings")
                 .font(.title)
         }
         .padding()
+    }
+    
+    // Headers for columns
+    private var columnHeaders: some View {
+        HStack(spacing: 15) {
+            Text("Match Day \(viewModel.currentMatchDay)")
+            Spacer()
+            Text("W")
+                .frame(width: 15)
+            Text("D")
+                .frame(width: 15)
+            Text("L")
+                .frame(width: 15)
+            Text("P")
+                .frame(width: 20)
+        }
+        .padding(.horizontal, 20)
+        .font(.subheadline)
+        .foregroundColor(Color.theme.secondaryText)
+    }
+    
+    // Loops over each league position
+    private var standingsList: some View {
+        List {
+            ForEach(viewModel.standings) { leaguePosition in
+                StandingsRowView(leaguePosition: leaguePosition)
+                    .listRowBackground(Color.clear)
+            }
+        }
+        .listStyle(.plain)
     }
 }
 

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// List view for teams and favourite teams
 struct TeamsView: View {
     
     @StateObject private var viewModel = TeamsViewModel()
@@ -19,6 +20,7 @@ struct TeamsView: View {
             VStack {
                 headerBar
                 Divider()
+                // Transition between favourites and all teams
                 if !showFavourites {
                     allTeamsList
                     .transition(.move(edge: .leading))
@@ -32,6 +34,7 @@ struct TeamsView: View {
         }
     }
     
+    // Header bar with title and favourites button
     private var headerBar: some View {
         HStack {
             Text(!showFavourites ? "All Teams" : "Favourite Teams")
@@ -49,6 +52,7 @@ struct TeamsView: View {
         .padding()
     }
     
+    // List of all teams
     private var allTeamsList: some View {
         List {
             ForEach(viewModel.allTeams) { teamDetail in
@@ -61,6 +65,7 @@ struct TeamsView: View {
         .listStyle(.plain)
     }
     
+    // List of favourite teams
     private var favouriteTeamsList: some View {
         List {
             ForEach(viewModel.favouriteTeams) { teamDetail in

@@ -8,12 +8,10 @@
 import Foundation
 import SwiftUI
 
-
+// Extends UIApplication for keyboard dismissal
 extension UIApplication {
-    
     func endEditing() {
         sendAction (#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
-    
 }
  

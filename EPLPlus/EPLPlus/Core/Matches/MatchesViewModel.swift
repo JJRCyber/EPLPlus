@@ -8,20 +8,25 @@
 import Foundation
 import Combine
 
+// View model for MatchesView
+// Inherits from BaseViewModel
 final class MatchesViewModel: BaseViewModel {
     
+    // Published vars for matches and matchday
     @Published var matchday: Int = 1
     @Published var matches: [Match] = []
-    @Published var animate: Bool = false
     
+    // Stores cancellable subscribers
     private var cancellables = Set<AnyCancellable>()
     
+    // Override init
     override init() {
         super.init()
         addSubscribers()
         footballDataManager.getMatches(matchday: matchday)
     }
     
+    // Add subscriber for published matches
     func addSubscribers() {
         footballDataManager.$matches
             .sink { [weak self] matches in
@@ -30,6 +35,7 @@ final class MatchesViewModel: BaseViewModel {
             .store(in: &cancellables)
     }
     
+    // Decrement matchday value and loads matches for that day
     func decrementMatchday() {
         if matchday > 1 {
             matchday -= 1
@@ -37,6 +43,7 @@ final class MatchesViewModel: BaseViewModel {
         }
     }
     
+    // Increment matchday and load matches for that day
     func incrementMatchday() {
         if matchday < 38 {
             matchday += 1
