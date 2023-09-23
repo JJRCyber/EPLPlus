@@ -18,7 +18,13 @@ struct MatchesView: View {
                 .ignoresSafeArea()
             VStack {
                 headerBar
-                matchList
+                TabView(selection: $viewModel.matchday) {
+                    ForEach((1...38), id: \.self) { index in
+                        matchList
+                            .tag(index)
+                    }
+                }
+                .tabViewStyle(.page(indexDisplayMode: .never))
                 Spacer(minLength: 0)
             }
         }

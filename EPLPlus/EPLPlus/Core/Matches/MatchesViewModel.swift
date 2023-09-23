@@ -33,6 +33,11 @@ final class MatchesViewModel: BaseViewModel {
                 self?.matches = matches
             }
             .store(in: &cancellables)
+        $matchday
+            .sink { [weak self] matchday in
+                self?.footballDataManager.getMatches(matchday: matchday)
+            }
+            .store(in: &cancellables)
     }
     
     // Decrement matchday value and loads matches for that day
