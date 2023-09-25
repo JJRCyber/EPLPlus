@@ -15,6 +15,7 @@ final class MatchesViewModel: BaseViewModel {
     // Published vars for matches and matchday
     @Published var matchday: Int = 1
     @Published var matches: [Match] = []
+    @Published var isLoading: Bool = true
     
     // Stores cancellable subscribers
     private var cancellables = Set<AnyCancellable>()
@@ -31,10 +32,12 @@ final class MatchesViewModel: BaseViewModel {
         footballDataManager.$matches
             .sink { [weak self] matches in
                 self?.matches = matches
+                self?.isLoading = false
             }
             .store(in: &cancellables)
         $matchday
             .sink { [weak self] matchday in
+                self?.isLoading = true
                 self?.footballDataManager.getMatches(matchday: matchday)
             }
             .store(in: &cancellables)
@@ -43,6 +46,7 @@ final class MatchesViewModel: BaseViewModel {
     // Decrement matchday value and loads matches for that day
     func decrementMatchday() {
         if matchday > 1 {
+            self.isLoading = true
             matchday -= 1
             footballDataManager.getMatches(matchday: matchday)
         }
@@ -51,6 +55,7 @@ final class MatchesViewModel: BaseViewModel {
     // Increment matchday and load matches for that day
     func incrementMatchday() {
         if matchday < 38 {
+            self.isLoading = true
             matchday += 1
             footballDataManager.getMatches(matchday: matchday)
         }

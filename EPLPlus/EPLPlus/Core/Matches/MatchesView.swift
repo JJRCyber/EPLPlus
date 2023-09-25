@@ -22,6 +22,9 @@ struct MatchesView: View {
                     ForEach((1...38), id: \.self) { index in
                         matchList
                             .tag(index)
+                            .opacity(viewModel.isLoading ? 0.0 : 1.0)
+                            .animation(.easeIn, value: viewModel.isLoading)
+                            
                     }
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
@@ -35,14 +38,20 @@ struct MatchesView: View {
         HStack {
             CircleButtonView(iconName: "chevron.left")
                 .onTapGesture {
-                    viewModel.decrementMatchday()
+                    withAnimation {
+                        viewModel.decrementMatchday()
+                    }
+   
                 }
             Spacer()
             Text("Matchday \(viewModel.matchday)")
             Spacer()
             CircleButtonView(iconName: "chevron.right")
                 .onTapGesture {
-                    viewModel.incrementMatchday()
+                    withAnimation {
+                        viewModel.incrementMatchday()
+                    }
+
                 }
         }
         .padding(.horizontal)
