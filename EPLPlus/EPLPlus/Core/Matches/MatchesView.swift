@@ -18,6 +18,13 @@ struct MatchesView: View {
                 .ignoresSafeArea()
             VStack {
                 headerBar
+//                ScrollView(.horizontal, showsIndicators: false) {
+//                    LazyHStack {
+//                        ForEach((1...38), id: \.self) { index in
+//
+//                        }
+//                    }
+//                }
                 TabView(selection: $viewModel.matchday) {
                     ForEach((1...38), id: \.self) { index in
                         matchList
@@ -59,10 +66,11 @@ struct MatchesView: View {
     
     // Loops over all matches on a given matchday
     private var matchList: some View {
-        List {
+        ScrollView {
             ForEach(viewModel.matches) { match in
                 MatchRowView(match: match)
                     .listRowBackground(Color.clear)
+                Divider()
             }
         }
         .listStyle(.plain)

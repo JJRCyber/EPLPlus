@@ -26,21 +26,31 @@ struct MatchRowView: View {
                 Text(match.homeTeam.shortName)
             }
             .frame(width: UIScreen.main.bounds.width / 3)
-            VStack {
-                Text("V")
-                Text("\(match.utcDate.formatted(date: .omitted, time: .shortened))")
+            Spacer(minLength: 0)
+            if match.score.winner != nil {
+                Group {
+                    Text("\(match.score.fullTime.home ?? 0)")
+                    Text(" - ")
+                    Text("\(match.score.fullTime.away ?? 0)")
+                }
+                .foregroundColor(Color.theme.secondaryText)
+            } else {
+                VStack {
+                    Text("V")
+                    Text("\(match.utcDate.formatted(date: .omitted, time: .shortened))")
+                }
+                .foregroundColor(Color.theme.secondaryText)
             }
-            .foregroundColor(Color.theme.secondaryText)
-            .frame(width: UIScreen.main.bounds.width / 3)
+            Spacer(minLength: 0)
             VStack {
                 TeamCrestView(team: match.awayTeam)
                     .frame(width: 30, height: 30)
                 Text(match.awayTeam.shortName)
             }
             .frame(width: UIScreen.main.bounds.width / 3)
-
         }
-        .padding()
+        .padding(.horizontal, 5)
+        .padding(.vertical)
     }
 }
 
