@@ -32,6 +32,9 @@ struct TeamsView: View {
                 Spacer(minLength: 0)
             }
         }
+        .fullScreenCover(isPresented: $viewModel.showTeamDetailView) {
+            TeamDetailView(teamsViewModel: viewModel, selectedTeam: viewModel.selectedTeam)
+        }
     }
     
     // Header bar with title and favourites button
@@ -60,6 +63,11 @@ struct TeamsView: View {
                     .listRowInsets(.init(top: 0, leading: 0, bottom: 10, trailing: 0))
                     .listRowSeparator(.hidden)
                     .listRowBackground(Color.clear)
+                    .onTapGesture {
+                        viewModel.selectedTeam = teamDetail
+                        viewModel.showTeamDetailView.toggle()
+                    }
+                
             }
         }
         .listStyle(.plain)

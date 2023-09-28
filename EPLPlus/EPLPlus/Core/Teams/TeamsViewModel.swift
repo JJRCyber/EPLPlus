@@ -16,6 +16,10 @@ final class TeamsViewModel: BaseViewModel {
     @Published var allTeams: [TeamDetail] = []
     @Published var favouriteTeams: [TeamDetail] = []
     
+    // Variables for when user selects team on list
+    @Published var selectedTeam: TeamDetail?
+    @Published var showTeamDetailView: Bool = false
+    
     // Stores cancellable downloads
     private var cancellables = Set<AnyCancellable>()
     
@@ -41,5 +45,9 @@ final class TeamsViewModel: BaseViewModel {
     // Retrieves teams from FootballDataManager
     private func getTeams() {
         footballDataManager.getTeams()
+    }
+    
+    func addTeamToFavourites(team: TeamDetail) {
+        favouriteTeams.append(team)
     }
 }
