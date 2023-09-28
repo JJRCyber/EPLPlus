@@ -34,10 +34,10 @@ struct TeamDetailView: View {
 
                         Spacer()
                         Button {
-                            teamsViewModel.addTeamToFavourites(team: team)
+                            teamsViewModel.toggleTeamFavourite(team: team)
                         } label: {
-                            Image(systemName: "heart.fill")
-                                .foregroundColor(Color.theme.red)
+                            Image(systemName: teamsViewModel.isFavouriteTeam(team: team) ? "heart.fill" : "heart")
+                                .foregroundColor(teamsViewModel.isFavouriteTeam(team: team) ? Color.theme.red : Color.theme.secondaryText)
                         }
 
                     }

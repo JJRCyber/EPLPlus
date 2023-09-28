@@ -47,7 +47,15 @@ final class TeamsViewModel: BaseViewModel {
         footballDataManager.getTeams()
     }
     
-    func addTeamToFavourites(team: TeamDetail) {
-        favouriteTeams.append(team)
+    func isFavouriteTeam(team: TeamDetail) -> Bool {
+        return favouriteTeams.contains(where: {$0.id == team.id})
+    }
+    
+    func toggleTeamFavourite(team: TeamDetail) {
+        if let index = favouriteTeams.firstIndex(where: {$0.id == team.id}) {
+            favouriteTeams.remove(at: index)
+        } else {
+            favouriteTeams.append(team)
+        }
     }
 }
