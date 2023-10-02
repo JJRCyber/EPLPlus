@@ -41,7 +41,7 @@ struct TeamDetailView: View {
         ZStack {
             Color.theme.background
                 .ignoresSafeArea()
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 5) {
                     headerBar
                     teamHeader
@@ -89,7 +89,7 @@ struct TeamDetailView: View {
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(Color.theme.accent)
-                Text("Founded: \(team.founded ?? 0)")
+                Text(verbatim: "Founded: \(team.founded ?? 0)")
                     .font(.subheadline)
                     .foregroundColor(Color.theme.secondaryText)
                 
@@ -104,6 +104,7 @@ struct TeamDetailView: View {
     var venueSection: some View {
         Group {
             Map(coordinateRegion: $viewModel.mapRegion)
+                .cornerRadius(10)
                 .frame(height: 200)
                 .allowsHitTesting(false)
                 .padding(.horizontal)

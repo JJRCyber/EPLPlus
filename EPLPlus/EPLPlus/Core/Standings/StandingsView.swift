@@ -61,6 +61,9 @@ struct StandingsView: View {
                     .listRowBackground(Color.clear)
             }
         }
+        .refreshable {
+            viewModel.getStandings()
+        }
         .listStyle(.plain)
     }
 }

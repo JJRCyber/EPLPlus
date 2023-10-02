@@ -41,7 +41,7 @@ final class TabBarViewModel: BaseViewModel {
     }
     
     // Updates standings from API
-    private func getStandings() {
+    func getStandings() {
         footballDataManager.getStandings()
     }
     

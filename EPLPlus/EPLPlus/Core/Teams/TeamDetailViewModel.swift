@@ -40,7 +40,7 @@ final class TeamDetailViewModel: BaseViewModel {
             }
             var region = response.boundingRegion
             
-            let zoomFactor: Double = 0.4 // adjust this value as needed
+            let zoomFactor: Double = 0.7 // adjust this value as needed
             region.span.latitudeDelta *= zoomFactor
             region.span.longitudeDelta *= zoomFactor
             
