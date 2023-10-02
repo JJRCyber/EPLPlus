@@ -27,6 +27,7 @@ struct TeamsRowView: View {
             Image(systemName: "chevron.right")
                 .padding()
         }
+        .contentShape(Rectangle())
         .padding()
     }
 }

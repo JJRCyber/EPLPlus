@@ -31,10 +31,15 @@ struct TeamsView: View {
                 }
                 Spacer(minLength: 0)
             }
+            .background(
+                NavigationLink(destination: TeamDetailLoadingView(selectedTeam: $viewModel.selectedTeam, teamsViewModel: viewModel), isActive: $viewModel.showTeamDetailView, label: {
+                    EmptyView()
+                })
+            )
         }
-        .fullScreenCover(isPresented: $viewModel.showTeamDetailView) {
-            TeamDetailView(teamsViewModel: viewModel, selectedTeam: viewModel.selectedTeam)
-        }
+//        .fullScreenCover(isPresented: $viewModel.showTeamDetailView) {
+//            TeamDetailView(teamsViewModel: viewModel, selectedTeam: viewModel.selectedTeam)
+//        }
     }
     
     // Header bar with title and favourites button
@@ -63,8 +68,7 @@ struct TeamsView: View {
                     .listRowSeparator(.hidden)
                     .listRowBackground(Color.clear)
                     .onTapGesture {
-                        viewModel.selectedTeam = teamDetail
-                        viewModel.showTeamDetailView.toggle()
+                        viewModel.viewSegue(teamDetail: teamDetail)
                     }
                 
             }
@@ -80,8 +84,7 @@ struct TeamsView: View {
                     .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 0))
                     .listRowSeparator(.hidden)
                     .onTapGesture {
-                        viewModel.selectedTeam = teamDetail
-                        viewModel.showTeamDetailView.toggle()
+                        viewModel.viewSegue(teamDetail: teamDetail)
                     }
             }
         }

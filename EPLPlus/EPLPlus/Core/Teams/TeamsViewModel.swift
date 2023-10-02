@@ -69,6 +69,11 @@ final class TeamsViewModel: BaseViewModel {
         return favouriteTeams.contains(where: {$0.id == team.id})
     }
     
+    func viewSegue(teamDetail: TeamDetail) {
+        selectedTeam = teamDetail
+        showTeamDetailView.toggle()
+    }
+    
     func toggleTeamFavourite(team: TeamDetail) {
         if let index = favouriteTeams.firstIndex(where: {$0.id == team.id}) {
             favouriteTeams.remove(at: index)
