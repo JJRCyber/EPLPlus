@@ -33,6 +33,9 @@ struct MatchesView: View {
                             .animation(.easeIn.delay(0.3), value: viewModel.isLoading)
                     }
                 }
+                .refreshable {
+                    viewModel.refreshMatchday()
+                }
                 .tabViewStyle(.page(indexDisplayMode: .never))
                 Spacer(minLength: 0)
             }

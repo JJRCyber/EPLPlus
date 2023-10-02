@@ -60,4 +60,8 @@ final class MatchesViewModel: BaseViewModel {
             footballDataManager.getMatches(matchday: matchday)
         }
     }
+    
+    func refreshMatchday() {
+        footballDataManager.getMatches(matchday: matchday)
+    }
 }

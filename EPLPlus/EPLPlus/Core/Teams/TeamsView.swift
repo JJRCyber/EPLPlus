@@ -49,7 +49,6 @@ struct TeamsView: View {
                     withAnimation {
                         showFavourites.toggle()
                     }
-
                 }
         }
         .padding()
@@ -80,6 +79,10 @@ struct TeamsView: View {
                 TeamsRowView(teamDetail: teamDetail)
                     .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 0))
                     .listRowSeparator(.hidden)
+                    .onTapGesture {
+                        viewModel.selectedTeam = teamDetail
+                        viewModel.showTeamDetailView.toggle()
+                    }
             }
         }
         .listStyle(.plain)

@@ -30,8 +30,11 @@ struct MatchRowView: View {
             if match.score.winner != nil {
                 Group {
                     Text("\(match.score.fullTime.home ?? 0)")
+                        .foregroundColor(match.score.winner ?? "" == "HOME_TEAM" ? Color.theme.green : Color.theme.secondaryText)
                     Text(" - ")
+                        .foregroundColor(Color.theme.secondaryText)
                     Text("\(match.score.fullTime.away ?? 0)")
+                        .foregroundColor(match.score.winner ?? "" == "AWAY_TEAM" ? Color.theme.green : Color.theme.secondaryText)
                 }
                 .foregroundColor(Color.theme.secondaryText)
             } else {
