@@ -26,6 +26,7 @@ struct TeamDetailView: View {
     
     @ObservedObject var teamsViewModel: TeamsViewModel
     @StateObject var viewModel: TeamDetailViewModel
+    @EnvironmentObject var tabBarViewModel: TabBarViewModel
     let team: TeamDetail
     
     @Environment(\.presentationMode) var presentationMode
@@ -62,7 +63,7 @@ struct TeamDetailView: View {
                 .padding()
                 HStack(spacing: 0) {
                     VStack(alignment: .leading) {
-                        Text(team.name)
+                        Text(team.shortName)
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundColor(Color.theme.accent)
@@ -89,6 +90,7 @@ struct TeamDetailView: View {
                     .padding(.horizontal)
                     .font(.caption)
                     .foregroundColor(Color.theme.secondaryText)
+                
                 Spacer()
             }
         }
@@ -99,5 +101,6 @@ struct TeamDetailView: View {
 struct TeamDetailView_Previews: PreviewProvider {
     static var previews: some View {
         TeamDetailView(teamsViewModel: TeamsViewModel(), team: dev.teamDetail)
+            .environmentObject(TabBarViewModel())
     }
 }

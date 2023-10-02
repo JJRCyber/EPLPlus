@@ -10,7 +10,7 @@ import SwiftUI
 // Displays league table
 struct StandingsView: View {
     
-    @StateObject var viewModel = StandingsViewModel()
+    @EnvironmentObject var viewModel: TabBarViewModel
     
     var body: some View {
         ZStack {
@@ -70,6 +70,7 @@ struct StandingsView_Previews: PreviewProvider {
         NavigationStack {
             StandingsView()
                 .toolbar(.hidden, for: .navigationBar)
+                .environmentObject(TabBarViewModel())
         }
     }
 }

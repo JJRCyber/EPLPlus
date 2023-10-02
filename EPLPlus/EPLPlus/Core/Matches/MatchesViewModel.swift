@@ -29,6 +29,11 @@ final class MatchesViewModel: BaseViewModel {
     
     // Add subscriber for published matches
     func addSubscribers() {
+        footballDataManager.$currentMatchDay
+            .sink { [weak self] currentMatchDay in
+                self?.matchday = currentMatchDay
+            }
+            .store(in: &cancellables)
         footballDataManager.$matches
             .sink { [weak self] matches in
                 self?.matches = matches
@@ -41,6 +46,7 @@ final class MatchesViewModel: BaseViewModel {
                 self?.footballDataManager.getMatches(matchday: matchday)
             }
             .store(in: &cancellables)
+
     }
     
     // Decrement matchday value and loads matches for that day

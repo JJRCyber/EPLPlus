@@ -13,15 +13,15 @@ struct TabBarView: View {
     var body: some View {
         TabView {
             Group {
-                MatchesView()
-                    .tabItem {
-                        Image(systemName: "sportscourt.fill")
-                        Text("Fixtures")
-                    }
                 StandingsView()
                     .tabItem {
                         Image(systemName: "trophy.fill")
                         Text("Standings")
+                    }
+                MatchesView()
+                    .tabItem {
+                        Image(systemName: "sportscourt.fill")
+                        Text("Fixtures")
                     }
                 TeamsView()
                     .tabItem {
