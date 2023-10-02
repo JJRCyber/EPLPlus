@@ -25,7 +25,7 @@ struct TeamDetailLoadingView: View {
 struct TeamDetailView: View {
     
     @ObservedObject var teamsViewModel: TeamsViewModel
-    @StateObject var viewModel = TeamDetailViewModel()
+    @StateObject var viewModel: TeamDetailViewModel
     let team: TeamDetail
     
     @Environment(\.presentationMode) var presentationMode
@@ -33,17 +33,14 @@ struct TeamDetailView: View {
     init(teamsViewModel: TeamsViewModel, team: TeamDetail) {
         self.team = team
         self.teamsViewModel = teamsViewModel
+        self._viewModel = StateObject(wrappedValue: TeamDetailViewModel(address: team.address))
     }
     
     var body: some View {
         ZStack {
             Color.theme.background
                 .ignoresSafeArea()
-            VStack(alignment: .leading, spacing: 0) {
-                Map(coordinateRegion: $viewModel.mapRegion)
-                    .ignoresSafeArea()
-                    .frame(height: 250)
-                    .allowsHitTesting(false)
+            VStack(alignment: .leading, spacing: 5) {
                 HStack {
                     Button {
                         presentationMode.wrappedValue.dismiss()
@@ -63,16 +60,35 @@ struct TeamDetailView: View {
                 }
                 .font(.title2)
                 .padding()
-                HStack {
-                    Text(team.name)
-                        .font(.title)
-                        .foregroundColor(Color.theme.accent)
+                HStack(spacing: 0) {
+                    VStack(alignment: .leading) {
+                        Text(team.name)
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.theme.accent)
+                        Text("Founded: \(team.founded ?? 0)")
+                            .font(.subheadline)
+                            .foregroundColor(Color.theme.secondaryText)
+
+                    }
+
                     Spacer()
                     TeamCrestView(team: Team(teamDetail: team))
-                        .frame(width: 70, height: 70)
+                        .frame(width: 50, height: 50)
                 }
                 .padding()
+
+                Map(coordinateRegion: $viewModel.mapRegion)
+                    .frame(height: 250)
+                    .allowsHitTesting(false)
+                    .padding(.horizontal)
+                Text(team.venue)
+                    .padding(.horizontal)
+                    .font(.headline)
                 Text(team.address)
+                    .padding(.horizontal)
+                    .font(.caption)
+                    .foregroundColor(Color.theme.secondaryText)
                 Spacer()
             }
         }
