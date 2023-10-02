@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9B262CB12AC51FA20020E778 /* TeamDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B262CB02AC51FA20020E778 /* TeamDetailView.swift */; };
 		9B262CB32AC525880020E778 /* TeamDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B262CB22AC525880020E778 /* TeamDetailViewModel.swift */; };
+		9B262CB92AC54EA60020E778 /* FavouriteTeamsContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B262CB72AC54EA60020E778 /* FavouriteTeamsContainer.xcdatamodeld */; };
+		9B262CBB2AC550B20020E778 /* FavouriteTeamsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B262CBA2AC550B20020E778 /* FavouriteTeamsManager.swift */; };
 		9B37F5302ABAF0BF00043CEF /* EPLPlusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B37F52F2ABAF0BF00043CEF /* EPLPlusApp.swift */; };
 		9B37F5342ABAF0C000043CEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B37F5332ABAF0C000043CEF /* Assets.xcassets */; };
 		9B37F5372ABAF0C000043CEF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B37F5362ABAF0C000043CEF /* Preview Assets.xcassets */; };
@@ -42,6 +44,8 @@
 /* Begin PBXFileReference section */
 		9B262CB02AC51FA20020E778 /* TeamDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailView.swift; sourceTree = "<group>"; };
 		9B262CB22AC525880020E778 /* TeamDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailViewModel.swift; sourceTree = "<group>"; };
+		9B262CB82AC54EA60020E778 /* FavouriteTeamsContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavouriteTeamsContainer.xcdatamodel; sourceTree = "<group>"; };
+		9B262CBA2AC550B20020E778 /* FavouriteTeamsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTeamsManager.swift; sourceTree = "<group>"; };
 		9B37F52C2ABAF0BF00043CEF /* EPLPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EPLPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B37F52F2ABAF0BF00043CEF /* EPLPlusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPLPlusApp.swift; sourceTree = "<group>"; };
 		9B37F5332ABAF0C000043CEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 				9B37F5522ABB010100043CEF /* Match.swift */,
 				9BAE46F12ABC1C650019349B /* Standings.swift */,
 				9BAE46F52ABC2B090019349B /* Team.swift */,
+				9B262CB72AC54EA60020E778 /* FavouriteTeamsContainer.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 			children = (
 				9BCA2CEC2ABD101100F199C3 /* FootballDataAPIManager.swift */,
 				9BAFA26F2ABD35900067BDA0 /* TeamCrestManager.swift */,
+				9B262CBA2AC550B20020E778 /* FavouriteTeamsManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -307,6 +313,7 @@
 				9BAFA2742ABD78880067BDA0 /* UIApplication.swift in Sources */,
 				9B37F5302ABAF0BF00043CEF /* EPLPlusApp.swift in Sources */,
 				9B262CB12AC51FA20020E778 /* TeamDetailView.swift in Sources */,
+				9B262CB92AC54EA60020E778 /* FavouriteTeamsContainer.xcdatamodeld in Sources */,
 				9BCA2CED2ABD101100F199C3 /* FootballDataAPIManager.swift in Sources */,
 				9BAE46F62ABC2B090019349B /* Team.swift in Sources */,
 				9B262CB32AC525880020E778 /* TeamDetailViewModel.swift in Sources */,
@@ -320,6 +327,7 @@
 				9B37F54C2ABAFB5800043CEF /* MatchesViewModel.swift in Sources */,
 				9B37F5532ABB010100043CEF /* Match.swift in Sources */,
 				9B37F54A2ABAFABE00043CEF /* MatchesView.swift in Sources */,
+				9B262CBB2AC550B20020E778 /* FavouriteTeamsManager.swift in Sources */,
 				9B37F5462ABAF80E00043CEF /* TeamsView.swift in Sources */,
 				9B37F5552ABB10F400043CEF /* MatchRowView.swift in Sources */,
 				9B37F54E2ABAFB6E00043CEF /* BaseViewModel.swift in Sources */,
@@ -539,6 +547,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9B262CB72AC54EA60020E778 /* FavouriteTeamsContainer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9B262CB82AC54EA60020E778 /* FavouriteTeamsContainer.xcdatamodel */,
+			);
+			currentVersion = 9B262CB82AC54EA60020E778 /* FavouriteTeamsContainer.xcdatamodel */;
+			path = FavouriteTeamsContainer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9B37F5242ABAF0BF00043CEF /* Project object */;
 }

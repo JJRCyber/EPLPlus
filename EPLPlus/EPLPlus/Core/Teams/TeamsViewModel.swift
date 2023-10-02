@@ -23,6 +23,8 @@ final class TeamsViewModel: BaseViewModel {
     // Stores cancellable downloads
     private var cancellables = Set<AnyCancellable>()
     
+    private let favouriteTeamManager = FavouriteTeamsManager()
+    
     // Override init
     override init() {
         super.init()
@@ -40,6 +42,22 @@ final class TeamsViewModel: BaseViewModel {
                 self?.allTeams = sortedTeams
             }
             .store(in: &cancellables)
+        
+        $allTeams
+            .combineLatest(favouriteTeamManager.$favouriteTeams)
+            .map { (teamDetails, teamDetailEntitys) -> [TeamDetail] in
+                teamDetails
+                    .compactMap { (team) -> TeamDetail? in
+                    guard let favouriteTeam = teamDetailEntitys.first(where: { $0.id == team.id }) else {
+                        return nil
+                    }
+                    return team
+                }
+            }
+            .sink { [weak self] returnedTeams in
+                self?.favouriteTeams = returnedTeams
+            }
+            .store(in: &cancellables)
     }
     
     // Retrieves teams from FootballDataManager
@@ -54,8 +72,10 @@ final class TeamsViewModel: BaseViewModel {
     func toggleTeamFavourite(team: TeamDetail) {
         if let index = favouriteTeams.firstIndex(where: {$0.id == team.id}) {
             favouriteTeams.remove(at: index)
+            favouriteTeamManager.removeTeamFromFavourites(team: team)
         } else {
             favouriteTeams.append(team)
+            favouriteTeamManager.addTeamToFavourites(team: team)
         }
     }
 }

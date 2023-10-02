@@ -30,8 +30,7 @@ struct MatchesView: View {
                         matchList
                             .tag(index)
                             .opacity(viewModel.isLoading ? 0.0 : 1.0)
-                            .animation(.easeIn, value: viewModel.isLoading)
-                            
+                            .animation(.easeIn.delay(0.3), value: viewModel.isLoading)
                     }
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
