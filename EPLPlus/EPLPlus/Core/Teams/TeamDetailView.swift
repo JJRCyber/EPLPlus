@@ -41,18 +41,21 @@ struct TeamDetailView: View {
         ZStack {
             Color.theme.background
                 .ignoresSafeArea()
-            VStack(alignment: .leading, spacing: 5) {
-                headerBar
-                teamHeader
-                venueSection
-                Divider()
-                    .padding(.top)
-                formSection
-                Divider()
-                    .padding(.top)
-                squadSection
-                Spacer()
+            ScrollView {
+                VStack(alignment: .leading, spacing: 5) {
+                    headerBar
+                    teamHeader
+                    venueSection
+                    Divider()
+                        .padding(.top)
+                    formSection
+                    Divider()
+                        .padding(.top)
+                    squadSection
+                    Spacer()
+                }
             }
+
         }
         .navigationBarBackButtonHidden()
     }
@@ -76,7 +79,7 @@ struct TeamDetailView: View {
             
         }
         .font(.title2)
-        .padding()
+        .padding(.horizontal)
     }
     
     var teamHeader: some View {
@@ -125,6 +128,8 @@ struct TeamDetailView: View {
             .font(.title3)
             .foregroundColor(Color.theme.secondaryText)
             .padding(.horizontal)
+            .padding(.top)
+            FormView(teamId: team.id)
         }
     }
     
@@ -137,7 +142,7 @@ struct TeamDetailView: View {
             }
             .font(.title3)
             .foregroundColor(Color.theme.secondaryText)
-            .padding(.horizontal)
+            .padding()
 
             ScrollView {
                 ForEach(team.squad) { player in
