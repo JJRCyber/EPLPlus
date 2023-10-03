@@ -27,6 +27,8 @@
 		9B4E77B82ACA85230046601A /* SquadListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E77B72ACA85230046601A /* SquadListRowView.swift */; };
 		9B4E77BA2ACA8B3C0046601A /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E77B92ACA8B3C0046601A /* FormView.swift */; };
 		9B4E77BC2ACA8CD00046601A /* FormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E77BB2ACA8CD00046601A /* FormViewModel.swift */; };
+		9B4E77BF2ACB72FE0046601A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B4E77BE2ACB72FE0046601A /* LaunchScreen.storyboard */; };
+		9B4E77C12ACB74950046601A /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E77C02ACB74950046601A /* LaunchView.swift */; };
 		9BAE46F22ABC1C650019349B /* Standings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAE46F12ABC1C650019349B /* Standings.swift */; };
 		9BAE46F42ABC1EF90019349B /* TeamsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAE46F32ABC1EF90019349B /* TeamsRowView.swift */; };
 		9BAE46F62ABC2B090019349B /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAE46F52ABC2B090019349B /* Team.swift */; };
@@ -35,13 +37,13 @@
 		9BAFA26E2ABD34970067BDA0 /* TeamCrestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAFA26D2ABD34970067BDA0 /* TeamCrestViewModel.swift */; };
 		9BAFA2702ABD35900067BDA0 /* TeamCrestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAFA26F2ABD35900067BDA0 /* TeamCrestManager.swift */; };
 		9BAFA2722ABD5E740067BDA0 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAFA2712ABD5E740067BDA0 /* LocalFileManager.swift */; };
-		9BAFA2742ABD78880067BDA0 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAFA2732ABD78880067BDA0 /* UIApplication.swift */; };
 		9BAFA2762ABD79270067BDA0 /* StandingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAFA2752ABD79270067BDA0 /* StandingsViewModel.swift */; };
 		9BCA2CE52ABC620300F199C3 /* TeamsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCA2CE42ABC620300F199C3 /* TeamsViewModel.swift */; };
 		9BCA2CE72ABD06EE00F199C3 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCA2CE62ABD06EE00F199C3 /* TabBarViewModel.swift */; };
 		9BCA2CE92ABD0D5E00F199C3 /* StandingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCA2CE82ABD0D5E00F199C3 /* StandingsView.swift */; };
 		9BCA2CEB2ABD0D7500F199C3 /* StandingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCA2CEA2ABD0D7500F199C3 /* StandingsRowView.swift */; };
 		9BCA2CED2ABD101100F199C3 /* FootballDataAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCA2CEC2ABD101100F199C3 /* FootballDataAPIManager.swift */; };
+		9BD5E57F2ACCCF8E0040D7EA /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5E57E2ACCCF8E0040D7EA /* LoadingIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		9B4E77B72ACA85230046601A /* SquadListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadListRowView.swift; sourceTree = "<group>"; };
 		9B4E77B92ACA8B3C0046601A /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 		9B4E77BB2ACA8CD00046601A /* FormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewModel.swift; sourceTree = "<group>"; };
+		9B4E77BE2ACB72FE0046601A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9B4E77C02ACB74950046601A /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		9BAE46F12ABC1C650019349B /* Standings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Standings.swift; sourceTree = "<group>"; };
 		9BAE46F32ABC1EF90019349B /* TeamsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsRowView.swift; sourceTree = "<group>"; };
 		9BAE46F52ABC2B090019349B /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
@@ -74,13 +78,13 @@
 		9BAFA26D2ABD34970067BDA0 /* TeamCrestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCrestViewModel.swift; sourceTree = "<group>"; };
 		9BAFA26F2ABD35900067BDA0 /* TeamCrestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCrestManager.swift; sourceTree = "<group>"; };
 		9BAFA2712ABD5E740067BDA0 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
-		9BAFA2732ABD78880067BDA0 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		9BAFA2752ABD79270067BDA0 /* StandingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsViewModel.swift; sourceTree = "<group>"; };
 		9BCA2CE42ABC620300F199C3 /* TeamsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewModel.swift; sourceTree = "<group>"; };
 		9BCA2CE62ABD06EE00F199C3 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		9BCA2CE82ABD0D5E00F199C3 /* StandingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsView.swift; sourceTree = "<group>"; };
 		9BCA2CEA2ABD0D7500F199C3 /* StandingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsRowView.swift; sourceTree = "<group>"; };
 		9BCA2CEC2ABD101100F199C3 /* FootballDataAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballDataAPIManager.swift; sourceTree = "<group>"; };
+		9BD5E57E2ACCCF8E0040D7EA /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +142,6 @@
 			children = (
 				9B37F53E2ABAF28600043CEF /* Color.swift */,
 				9B37F5562ABB113700043CEF /* PreviewProvider.swift */,
-				9BAFA2732ABD78880067BDA0 /* UIApplication.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 		9B37F5442ABAF7C300043CEF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				9B4E77BD2ACB72EC0046601A /* Launch */,
 				9BAFA2692ABD346B0067BDA0 /* Components */,
 				9BAFA2682ABD345F0067BDA0 /* Standings */,
 				9BAFA2672ABD344D0067BDA0 /* Teams */,
@@ -165,6 +169,15 @@
 				9B262CB72AC54EA60020E778 /* FavouriteTeamsContainer.xcdatamodeld */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		9B4E77BD2ACB72EC0046601A /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				9B4E77BE2ACB72FE0046601A /* LaunchScreen.storyboard */,
+				9B4E77C02ACB74950046601A /* LaunchView.swift */,
+			);
+			path = Launch;
 			sourceTree = "<group>";
 		};
 		9BAFA2612ABD27DD0067BDA0 /* Utilities */ = {
@@ -235,6 +248,7 @@
 			children = (
 				9B37F5472ABAFA3200043CEF /* CircleButtonView.swift */,
 				9BAFA26A2ABD34730067BDA0 /* TeamBadge */,
+				9BD5E57E2ACCCF8E0040D7EA /* LoadingIndicator.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -306,6 +320,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B4E77BF2ACB72FE0046601A /* LaunchScreen.storyboard in Resources */,
 				9B37F5372ABAF0C000043CEF /* Preview Assets.xcassets in Resources */,
 				9B37F5342ABAF0C000043CEF /* Assets.xcassets in Resources */,
 			);
@@ -319,10 +334,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BAFA2762ABD79270067BDA0 /* StandingsViewModel.swift in Sources */,
-				9BAFA2742ABD78880067BDA0 /* UIApplication.swift in Sources */,
 				9B37F5302ABAF0BF00043CEF /* EPLPlusApp.swift in Sources */,
 				9B262CB12AC51FA20020E778 /* TeamDetailView.swift in Sources */,
 				9B262CB92AC54EA60020E778 /* FavouriteTeamsContainer.xcdatamodeld in Sources */,
+				9B4E77C12ACB74950046601A /* LaunchView.swift in Sources */,
 				9BCA2CED2ABD101100F199C3 /* FootballDataAPIManager.swift in Sources */,
 				9BAE46F62ABC2B090019349B /* Team.swift in Sources */,
 				9B262CB32AC525880020E778 /* TeamDetailViewModel.swift in Sources */,
@@ -334,6 +349,7 @@
 				9BAFA2632ABD27F50067BDA0 /* NetworkingManager.swift in Sources */,
 				9BCA2CE72ABD06EE00F199C3 /* TabBarViewModel.swift in Sources */,
 				9BCA2CE52ABC620300F199C3 /* TeamsViewModel.swift in Sources */,
+				9BD5E57F2ACCCF8E0040D7EA /* LoadingIndicator.swift in Sources */,
 				9B37F54C2ABAFB5800043CEF /* MatchesViewModel.swift in Sources */,
 				9B37F5532ABB010100043CEF /* Match.swift in Sources */,
 				9B4E77BC2ACA8CD00046601A /* FormViewModel.swift in Sources */,
@@ -486,6 +502,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -519,6 +536,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (

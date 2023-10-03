@@ -14,11 +14,21 @@ struct EPLPlusApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
-                TabBarView()
-                    .toolbar(.hidden, for: .navigationBar)
+            ZStack {
+                NavigationStack {
+                    TabBarView()
+                        .toolbar(.hidden, for: .navigationBar)
+                }
+                .environmentObject(viewModel)
+                ZStack {
+                    if viewModel.showLaunchView {
+                        LaunchView(showLaunchView: $viewModel.showLaunchView)
+                            .transition(AnyTransition.opacity.animation(.easeIn))
+                    }
+                }
+                .zIndex(2.0)
+
             }
-            .environmentObject(viewModel)
         }
     }
 }

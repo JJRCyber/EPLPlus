@@ -39,10 +39,11 @@ struct MatchRowView: View {
                 .foregroundColor(Color.theme.secondaryText)
             } else {
                 VStack {
-                    Text("V")
                     Text("\(match.utcDate.formatted(date: .omitted, time: .shortened))")
+                    Text("\(match.utcDate.formatted(date: .abbreviated, time: .omitted))")
                 }
                 .foregroundColor(Color.theme.secondaryText)
+                .font(.caption)
             }
             Spacer(minLength: 0)
             VStack {

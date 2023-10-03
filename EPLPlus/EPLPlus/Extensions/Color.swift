@@ -20,4 +20,6 @@ struct ColorTheme {
     let red = Color("RedColor")
     let secondaryText = Color("SecondaryTextColor")
     let listBackground = Color("ListBackground")
+    let launchBackground = Color("LaunchBackground")
+    let launchAccent = Color("LaunchAccent")
 }

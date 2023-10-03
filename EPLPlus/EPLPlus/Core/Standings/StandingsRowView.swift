@@ -22,7 +22,7 @@ struct StandingsRowView: View {
      */
     
     var body: some View {
-        HStack(spacing: 15) {
+        HStack(spacing: 12) {
             Text("\(leaguePosition.position)")
                 .frame(width: 25)
                 .font(.headline)
@@ -31,6 +31,8 @@ struct StandingsRowView: View {
             Text("\(leaguePosition.team.shortName)")
                 .frame(alignment: .leading)
             Spacer()
+            Text("\(leaguePosition.playedGames)")
+                .frame(width: 20)
             Text("\(leaguePosition.won)")
                 .foregroundColor(Color.theme.green)
                 .frame(width: 15)

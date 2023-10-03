@@ -18,9 +18,15 @@ struct StandingsView: View {
                 .ignoresSafeArea()
             VStack {
                 headerBar
-                Spacer(minLength: 0)
                 columnHeaders
-                standingsList
+                if !viewModel.isLoading {
+                    standingsList
+                        .transition(AnyTransition.opacity.animation(.easeIn))
+                } else {
+                    Spacer()
+                    LoadingIndicator(color: Color.theme.accent)
+                }
+                Spacer()
             }
         }
     }
@@ -36,9 +42,11 @@ struct StandingsView: View {
     
     // Headers for columns
     private var columnHeaders: some View {
-        HStack(spacing: 15) {
+        HStack(spacing: 12) {
             Text("Match Day \(viewModel.currentMatchDay)")
             Spacer()
+            Text("PL")
+                .frame(width: 20)
             Text("W")
                 .frame(width: 15)
             Text("D")

@@ -21,14 +21,23 @@ struct TeamsView: View {
                 headerBar
                 Divider()
                 // Transition between favourites and all teams
-                if !showFavourites {
-                    allTeamsList
-                    .transition(.move(edge: .leading))
+                if !viewModel.isLoading {
+                    ZStack {
+                        if !showFavourites {
+                            allTeamsList
+                            .transition(.move(edge: .leading))
+                        }
+                        if showFavourites {
+                            favouriteTeamsList
+                                .transition(.move(edge: .trailing))
+                        }
+                    }
+                    .transition(AnyTransition.opacity.animation(.easeIn))
+                } else {
+                    Spacer()
+                    LoadingIndicator(color: Color.theme.accent)
                 }
-                if showFavourites {
-                    favouriteTeamsList
-                        .transition(.move(edge: .trailing))
-                }
+
                 Spacer(minLength: 0)
             }
             .background(
@@ -37,9 +46,6 @@ struct TeamsView: View {
                 })
             )
         }
-//        .fullScreenCover(isPresented: $viewModel.showTeamDetailView) {
-//            TeamDetailView(teamsViewModel: viewModel, selectedTeam: viewModel.selectedTeam)
-//        }
     }
     
     // Header bar with title and favourites button
@@ -70,7 +76,6 @@ struct TeamsView: View {
                     .onTapGesture {
                         viewModel.viewSegue(teamDetail: teamDetail)
                     }
-                
             }
         }
         .listStyle(.plain)
@@ -81,8 +86,9 @@ struct TeamsView: View {
         List {
             ForEach(viewModel.favouriteTeams) { teamDetail in
                 TeamsRowView(teamDetail: teamDetail)
-                    .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 0))
+                    .listRowInsets(.init(top: 0, leading: 0, bottom: 10, trailing: 0))
                     .listRowSeparator(.hidden)
+                    .listRowBackground(Color.clear)
                     .onTapGesture {
                         viewModel.viewSegue(teamDetail: teamDetail)
                     }

@@ -40,6 +40,7 @@ final class TeamsViewModel: BaseViewModel {
             }
             .sink { [weak self] sortedTeams in
                 self?.allTeams = sortedTeams
+                self?.isLoading = false
             }
             .store(in: &cancellables)
         
@@ -48,7 +49,7 @@ final class TeamsViewModel: BaseViewModel {
             .map { (teamDetails, teamDetailEntitys) -> [TeamDetail] in
                 teamDetails
                     .compactMap { (team) -> TeamDetail? in
-                    guard let favouriteTeam = teamDetailEntitys.first(where: { $0.id == team.id }) else {
+                        guard teamDetailEntitys.first(where: { $0.id == team.id }) != nil else {
                         return nil
                     }
                     return team
@@ -62,6 +63,7 @@ final class TeamsViewModel: BaseViewModel {
     
     // Retrieves teams from FootballDataManager
     private func getTeams() {
+        isLoading = true
         footballDataManager.getTeams()
     }
     

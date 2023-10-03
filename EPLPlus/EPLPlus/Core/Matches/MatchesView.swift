@@ -18,25 +18,23 @@ struct MatchesView: View {
                 .ignoresSafeArea()
             VStack {
                 headerBar
-//                ScrollView(.horizontal, showsIndicators: false) {
-//                    LazyHStack {
-//                        ForEach((1...38), id: \.self) { index in
-//
-//                        }
-//                    }
-//                }
-                TabView(selection: $viewModel.matchday) {
-                    ForEach((1...38), id: \.self) { index in
-                        matchList
-                            .tag(index)
-                            .opacity(viewModel.isLoading ? 0.0 : 1.0)
-                            .animation(.easeIn, value: viewModel.isLoading)
+                if !viewModel.isLoading {
+                    TabView(selection: $viewModel.matchday) {
+                        ForEach((1...38), id: \.self) { index in
+                            matchList
+                                .tag(index)
+                        }
                     }
+                    .refreshable {
+                        viewModel.refreshMatchday()
+                    }
+                    .tabViewStyle(.page(indexDisplayMode: .never))
+                    .transition(AnyTransition.asymmetric(insertion: AnyTransition.opacity.animation(.easeIn), removal: AnyTransition.opacity.animation(.easeOut(duration: 0.1))))
+
+                } else {
+                    Spacer()
+                    LoadingIndicator(color: Color.theme.accent)
                 }
-                .refreshable {
-                    viewModel.refreshMatchday()
-                }
-                .tabViewStyle(.page(indexDisplayMode: .never))
                 Spacer(minLength: 0)
             }
         }
@@ -50,7 +48,7 @@ struct MatchesView: View {
                     withAnimation {
                         viewModel.decrementMatchday()
                     }
-   
+                    
                 }
             Spacer()
             Text("Matchday \(viewModel.matchday)")
@@ -60,7 +58,7 @@ struct MatchesView: View {
                     withAnimation {
                         viewModel.incrementMatchday()
                     }
-
+                    
                 }
         }
         .padding(.horizontal)

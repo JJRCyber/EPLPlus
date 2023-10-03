@@ -10,5 +10,6 @@ import Foundation
 // BaseViewModel that most viewModels inherit from
 class BaseViewModel: ObservableObject {
     let footballDataManager = FootballDataAPIManager.instance
+    @Published var isLoading: Bool = true
     
 }

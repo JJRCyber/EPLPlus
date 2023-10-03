@@ -14,6 +14,7 @@ final class TabBarViewModel: BaseViewModel {
     // Published array of leaguepositions and Int for currentMatchDay
     @Published var standings: [LeaguePosition] = []
     @Published var currentMatchDay: Int = 1
+    @Published var showLaunchView: Bool = true
     
     // Stores cancellable downloads
     private var cancellables = Set<AnyCancellable>()
@@ -31,6 +32,7 @@ final class TabBarViewModel: BaseViewModel {
         footballDataManager.$standings
             .sink { [weak self] standings in
                 self?.standings = standings
+                self?.isLoading = false
             }
             .store(in: &cancellables)
         footballDataManager.$currentMatchDay
@@ -42,6 +44,7 @@ final class TabBarViewModel: BaseViewModel {
     
     // Updates standings from API
     func getStandings() {
+        isLoading = true
         footballDataManager.getStandings()
     }
     
