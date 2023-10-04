@@ -20,11 +20,12 @@ struct MatchesView: View {
                 headerBar
                 if !viewModel.isLoading {
                     matchList
-                        .transition(AnyTransition.asymmetric(insertion: AnyTransition.opacity.animation(.easeIn), removal: AnyTransition.opacity.animation(.easeOut(duration: 0.1))))
+                        .transition(AnyTransition.asymmetric(insertion: AnyTransition.opacity.animation(.easeIn), removal: AnyTransition.move(edge: .leading).animation(.easeOut)))
                     
                 } else {
                     Spacer()
                     LoadingIndicator(color: Color.theme.accent)
+                        .transition(AnyTransition.opacity.animation(.easeIn))
                 }
                 Spacer(minLength: 0)
             }

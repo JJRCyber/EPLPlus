@@ -38,7 +38,6 @@ struct FormView: View {
                             .foregroundColor(Color.theme.secondaryText)
                         Text("\(position.playedGames)")
                             .font(.headline)
-                            .foregroundColor(Color.theme.accent)
                     }
                     VStack() {
                         Text("Won")
