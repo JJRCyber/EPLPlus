@@ -9,7 +9,7 @@ import SwiftUI
 
 /* Displays each match row:
  - Home team name + crest
- - Time if incomplete
+ - Time and date if incomplete
  - Score if complete
  - Away team name + crest
  */

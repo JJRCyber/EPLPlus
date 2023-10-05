@@ -8,18 +8,20 @@
 import SwiftUI
 import Charts
 
+// View that uses SwiftUI Charts to display basic bar chart based on form
 struct FormView: View {
     
     let teamId: Int
     @StateObject var viewModel: FormViewModel
     
+    // Init viewModel with teamId to allow lookup of form
     init(teamId: Int) {
         self.teamId = teamId
         _viewModel = StateObject(wrappedValue: FormViewModel(teamId: teamId))
     }
     
 
-    
+    // View displays basic league statistics and bar chart for wins/losses and goals for/against
     var body: some View {
       if let position = viewModel.leaguePosition {
         HStack (alignment: .top){
@@ -65,6 +67,7 @@ struct FormView: View {
                     }
                 }
                 .padding(.trailing)
+            // Stacked barchart for league stats
                 VStack(alignment: .leading) {
                     Text("Goals")
                         .font(.caption)

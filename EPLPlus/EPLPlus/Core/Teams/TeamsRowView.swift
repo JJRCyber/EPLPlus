@@ -12,6 +12,7 @@ struct TeamsRowView: View {
     
     let teamDetail: TeamDetail
     
+    // Displays team name and chevron to indicate clickable
     var body: some View {
         HStack {
             TeamCrestView(team: Team(teamDetail: teamDetail))

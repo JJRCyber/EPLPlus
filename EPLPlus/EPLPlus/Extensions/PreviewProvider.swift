@@ -15,12 +15,13 @@ extension PreviewProvider {
     }
 }
 
+// Collection of objects that can be passed to view for previewing
 class DeveloperPreview {
     
     static let instance = DeveloperPreview()
     private init() { }
     
-    let tabBarViewModel = StandingsViewModel()
+    let standingsViewModel = StandingsViewModel()
     
     let match = Match(
         id: 436163,

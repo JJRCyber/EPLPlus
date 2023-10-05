@@ -108,7 +108,7 @@ struct TeamsView_Previews: PreviewProvider {
             TeamsView()
                 .toolbar(.hidden, for: .navigationBar)
         }
-        .environmentObject(dev.tabBarViewModel)
+        .environmentObject(dev.standingsViewModel)
 
     }
 }

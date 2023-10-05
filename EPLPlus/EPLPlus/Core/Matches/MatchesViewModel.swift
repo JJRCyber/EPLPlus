@@ -26,6 +26,7 @@ final class MatchesViewModel: BaseViewModel {
     }
     
     // Add subscriber for published matches
+    // When current matchday changes loads the matches for given day
     func addSubscribers() {
         footballDataManager.$currentMatchDay
             .sink { [weak self] currentMatchDay in
@@ -64,10 +65,5 @@ final class MatchesViewModel: BaseViewModel {
             matchday += 1
             footballDataManager.getMatches(matchday: matchday)
         }
-    }
-    
-    func refreshMatchday() {
-        self.isLoading = true
-        footballDataManager.getMatches(matchday: matchday)
     }
 }

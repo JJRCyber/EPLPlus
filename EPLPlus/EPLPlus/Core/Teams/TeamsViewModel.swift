@@ -12,6 +12,9 @@ import Combine
 // Inherits from BaseViewModel
 final class TeamsViewModel: BaseViewModel {
     
+    // Reference to favouriteTeamManager
+    private let favouriteTeamManager = FavouriteTeamsManager()
+    
     // Published arrays for allTeams and favouriteTeams
     @Published var allTeams: [TeamDetail] = []
     @Published var favouriteTeams: [TeamDetail] = []
@@ -19,12 +22,12 @@ final class TeamsViewModel: BaseViewModel {
     // Variables for when user selects team on list
     @Published var selectedTeam: TeamDetail?
     @Published var showTeamDetailView: Bool = false
+    
+    // Toggle between all teams and favourite teams lists
     @Published var showFavourites: Bool = false
     
     // Stores cancellable downloads
     private var cancellables = Set<AnyCancellable>()
-    
-    private let favouriteTeamManager = FavouriteTeamsManager()
     
     // Override init
     override init() {
@@ -35,6 +38,7 @@ final class TeamsViewModel: BaseViewModel {
     
     // Subscribes to teams publisher from footballDataManager
     func addSubscribers() {
+        // Updates all teams and sorts them alphabetically
         footballDataManager.$allTeams
             .map { teams in
                 teams.sorted { $0.shortName < $1.shortName }
@@ -45,6 +49,8 @@ final class TeamsViewModel: BaseViewModel {
             }
             .store(in: &cancellables)
         
+        // Filters all teams list to favourite teams list based on what is stored in CoreData
+        // This allows teamDetailView to load instantly without another API request
         $allTeams
             .combineLatest(favouriteTeamManager.$favouriteTeams)
             .map { (teamDetails, teamDetailEntitys) -> [TeamDetail] in
@@ -68,15 +74,18 @@ final class TeamsViewModel: BaseViewModel {
         footballDataManager.getTeams()
     }
     
+    // Returnes whether a team is favourited or not
     func isFavouriteTeam(team: TeamDetail) -> Bool {
         return favouriteTeams.contains(where: {$0.id == team.id})
     }
     
+    // Triggers team detail view when team selected
     func viewSegue(teamDetail: TeamDetail) {
         selectedTeam = teamDetail
         showTeamDetailView.toggle()
     }
     
+    // Toggles team favourite status on button press
     func toggleTeamFavourite(team: TeamDetail) {
         if let index = favouriteTeams.firstIndex(where: {$0.id == team.id}) {
             favouriteTeams.remove(at: index)

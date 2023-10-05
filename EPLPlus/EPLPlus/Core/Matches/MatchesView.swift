@@ -12,6 +12,8 @@ struct MatchesView: View {
     
     @StateObject private var viewModel = MatchesViewModel()
     
+    // Displays loading indicator while loading data from API
+    // Displays list of matches once loaded
     var body: some View {
         ZStack {
             Color.theme.background
@@ -19,8 +21,11 @@ struct MatchesView: View {
             VStack {
                 headerBar
                 if !viewModel.isLoading {
+                    // Transition in with opacity and transitions out with move down
                     matchList
-                        .transition(AnyTransition.asymmetric(insertion: AnyTransition.opacity.animation(.easeIn), removal: AnyTransition.move(edge: .leading).animation(.easeOut)))
+                        .transition(AnyTransition.asymmetric(
+                            insertion: AnyTransition.opacity.animation(.easeIn),
+                            removal: AnyTransition.move(edge: .bottom).animation(.easeOut)))
                     
                 } else {
                     Spacer()

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Simple listRowView to display player name and position
 struct SquadListRowView: View {
     
     let player: Player
@@ -26,6 +27,6 @@ struct SquadListRowView: View {
 
 struct SquadListRowView_Previews: PreviewProvider {
     static var previews: some View {
-        SquadListRowView(player: Player.init(id: 7, name: "Leighton Baines", position: "Defence", nationality: "England"))
+        SquadListRowView(player: Player.init(id: 7, name: "Lionel Messi", position: "Offence", nationality: "England"))
     }
 }

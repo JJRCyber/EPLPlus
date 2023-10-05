@@ -8,6 +8,8 @@
 import SwiftUI
 import MapKit
 
+// Intermediate view that is called when team is pressed
+// If selectedTeam is not nil loads the TeamDetailView
 struct TeamDetailLoadingView: View {
     
     @Binding var selectedTeam: TeamDetail?
@@ -22,6 +24,7 @@ struct TeamDetailLoadingView: View {
     }
 }
 
+// Team detail view that displays information about the team retrieved from API
 struct TeamDetailView: View {
     
     @ObservedObject var teamsViewModel: TeamsViewModel
@@ -29,14 +32,17 @@ struct TeamDetailView: View {
     
     let team: TeamDetail
     
+    // Allows dismissing of view when x button pressed
     @Environment(\.presentationMode) var presentationMode
     
+    // Init viewModel with stadium address returned from API
     init(teamsViewModel: TeamsViewModel, team: TeamDetail) {
         self.team = team
         self.teamsViewModel = teamsViewModel
         self._viewModel = StateObject(wrappedValue: TeamDetailViewModel(address: team.address))
     }
     
+    // View main sections
     var body: some View {
         ZStack {
             Color.theme.background
@@ -60,6 +66,7 @@ struct TeamDetailView: View {
         .navigationBarBackButtonHidden()
     }
     
+    // Displays button to close view and favourite team
     var headerBar: some View {
         HStack {
             Button {
@@ -82,6 +89,7 @@ struct TeamDetailView: View {
         .padding(.horizontal)
     }
     
+    // Displays team name, team crest and year founded
     var teamHeader: some View {
         HStack(spacing: 0) {
             VStack(alignment: .leading) {
@@ -101,6 +109,8 @@ struct TeamDetailView: View {
         .padding()
     }
     
+    // Shows a MapKit view of the stadium or of UK if address cannot be searched
+    // Displays stadium name and address below
     var venueSection: some View {
         Group {
             Map(coordinateRegion: $viewModel.mapRegion)
@@ -119,6 +129,7 @@ struct TeamDetailView: View {
         
     }
     
+    // Displays a form view using SwiftUI charts
     var formSection: some View {
         Group {
             HStack {
@@ -134,6 +145,7 @@ struct TeamDetailView: View {
         }
     }
     
+    // Displays scrollable section with player names in team
     var squadSection: some View {
         Group {
             HStack {

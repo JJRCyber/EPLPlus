@@ -39,6 +39,7 @@ struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             TabBarView()
+                .environmentObject(StandingsViewModel())
         }
         .toolbar(.hidden, for: .navigationBar)
 
