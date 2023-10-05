@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+/*
+ Launch view that displays for 2 seconds while API calls are made in background
+ Provides a more seamless user experience
+ */
 struct LaunchView: View {
     
     @Binding var showLaunchView: Bool

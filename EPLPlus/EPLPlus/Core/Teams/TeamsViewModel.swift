@@ -19,6 +19,7 @@ final class TeamsViewModel: BaseViewModel {
     // Variables for when user selects team on list
     @Published var selectedTeam: TeamDetail?
     @Published var showTeamDetailView: Bool = false
+    @Published var showFavourites: Bool = false
     
     // Stores cancellable downloads
     private var cancellables = Set<AnyCancellable>()

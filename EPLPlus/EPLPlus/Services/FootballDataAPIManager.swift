@@ -19,7 +19,7 @@ import Combine
  Singleton instance that is accessed by viewModels
  */
 
-class FootballDataAPIManager {
+final class FootballDataAPIManager {
     
     static let instance = FootballDataAPIManager()
     private init() { }
@@ -99,7 +99,6 @@ class FootballDataAPIManager {
                 // Set matches to response matches
                 self?.matches = matchesResponse.matches
                 // Cancel subscription as no more data will be returned
-                
                 self?.matchesSubscription?.cancel()
             })
     }

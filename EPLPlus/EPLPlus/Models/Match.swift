@@ -32,7 +32,7 @@ struct Match: Identifiable, Codable {
     let score: Result
 }
 
-// Result in only set once match complete
+// Result is only set once match complete
 struct Result: Codable {
     let winner: String?
     let fullTime, halfTime: Score
@@ -43,11 +43,12 @@ struct Score: Codable {
     let home, away: Int?
 }
 
-// Result set for match day
-// How many games scheduled
-// How many have been played at current time
-// Date of first played game
-// Date of last played game
+/* Result set for match day
+- How many games scheduled
+- How many have been played at current time
+- Date of first played game
+- Date of last played game
+ */
 struct ResultSet: Codable {
     let count: Int
     let first, last: String

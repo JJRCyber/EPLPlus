@@ -34,6 +34,7 @@ final class LocalFileManager {
             try data.write(to: url)
         } catch {
             // User does not need to be alerted to error as does not affect user experience
+            // If error with image saving it will be retrieved from network
             print("Error saving image. Image: \(imageName) \(error)")
         }
     }
@@ -60,6 +61,7 @@ final class LocalFileManager {
                 try FileManager.default.createDirectory(at: url, withIntermediateDirectories: true, attributes: nil)
             } catch let error {
                 // User does not need to be alerted to error as does not affect user experience
+                // If error with directory creation image will be retrieved from network
                 print("Error creating directory: \(error)")
             }
         }

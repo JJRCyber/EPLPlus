@@ -15,6 +15,7 @@ struct StandingsRowView: View {
     /* Displays:
      - League Position
      - Team Name
+     - Played games
      - Wins
      - Draws
      - Losses

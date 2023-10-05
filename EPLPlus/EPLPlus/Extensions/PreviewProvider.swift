@@ -20,7 +20,7 @@ class DeveloperPreview {
     static let instance = DeveloperPreview()
     private init() { }
     
-    let tabBarViewModel = TabBarViewModel()
+    let tabBarViewModel = StandingsViewModel()
     
     let match = Match(
         id: 436163,

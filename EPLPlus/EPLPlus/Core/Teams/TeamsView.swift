@@ -11,8 +11,8 @@ import SwiftUI
 struct TeamsView: View {
     
     @StateObject private var viewModel = TeamsViewModel()
-    @State private var showFavourites: Bool = false
     
+    // Displays list of all teams or favourite teams retrieved from CoreData
     var body: some View {
         ZStack {
             Color.theme.background
@@ -21,13 +21,14 @@ struct TeamsView: View {
                 headerBar
                 Divider()
                 // Transition between favourites and all teams
+                // If loading from API show loading indicator
                 if !viewModel.isLoading {
                     ZStack {
-                        if !showFavourites {
+                        if !viewModel.showFavourites {
                             allTeamsList
                             .transition(.move(edge: .leading))
                         }
-                        if showFavourites {
+                        if viewModel.showFavourites {
                             favouriteTeamsList
                                 .transition(.move(edge: .trailing))
                         }
@@ -37,9 +38,11 @@ struct TeamsView: View {
                     Spacer()
                     LoadingIndicator(color: Color.theme.accent)
                 }
-
                 Spacer(minLength: 0)
             }
+            
+            // Used as a way to lazily load view rather than instantiating all 20 teamDetailViews on view load
+            // Has been deprecated in iOS 16 but have not found a better way to do this
             .background(
                 NavigationLink(destination: TeamDetailLoadingView(selectedTeam: $viewModel.selectedTeam, teamsViewModel: viewModel), isActive: $viewModel.showTeamDetailView, label: {
                     EmptyView()
@@ -49,16 +52,17 @@ struct TeamsView: View {
     }
     
     // Header bar with title and favourites button
+    // Switches between all teams and favourites teams on tap
     private var headerBar: some View {
         HStack {
-            Text(!showFavourites ? "All Teams" : "Favourite Teams")
+            Text(!viewModel.showFavourites ? "All Teams" : "Favourite Teams")
                 .font(.title)
                 .animation(.none)
             Spacer()
-            CircleButtonView(iconName: !showFavourites ? "heart.fill" : "chevron.left")
+            CircleButtonView(iconName: !viewModel.showFavourites ? "heart.fill" : "chevron.left")
                 .onTapGesture {
                     withAnimation {
-                        showFavourites.toggle()
+                        viewModel.showFavourites.toggle()
                     }
                 }
         }

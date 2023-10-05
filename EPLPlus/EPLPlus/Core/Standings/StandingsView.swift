@@ -10,8 +10,11 @@ import SwiftUI
 // Displays league table
 struct StandingsView: View {
     
-    @EnvironmentObject var viewModel: TabBarViewModel
+    @EnvironmentObject var viewModel: StandingsViewModel
     
+    // Displays header bar and column headers
+    // If API request has completed show league table
+    // If loading show loading indicator
     var body: some View {
         ZStack {
             Color.theme.background
@@ -69,6 +72,7 @@ struct StandingsView: View {
                     .listRowBackground(Color.clear)
             }
         }
+        // Allows data to be refreshed by pulling down
         .refreshable {
             viewModel.getStandings()
         }
@@ -81,7 +85,7 @@ struct StandingsView_Previews: PreviewProvider {
         NavigationStack {
             StandingsView()
                 .toolbar(.hidden, for: .navigationBar)
-                .environmentObject(TabBarViewModel())
+                .environmentObject(StandingsViewModel())
         }
     }
 }

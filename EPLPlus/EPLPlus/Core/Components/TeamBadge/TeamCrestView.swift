@@ -26,6 +26,7 @@ struct TeamCrestView: View {
             } else if viewModel.isLoading {
                 ProgressView()
             } else {
+                // View thats shown if image can't be loaded
                 Image(systemName: "questionMark")
                     .foregroundColor(Color.theme.secondaryText)
             }

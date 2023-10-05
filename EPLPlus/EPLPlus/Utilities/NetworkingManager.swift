@@ -43,9 +43,10 @@ final class NetworkingManager {
             .eraseToAnyPublisher()
     }
     
-    // Downloads from a plain URL - used for donwloading images etc
+    // Downloads from a plain URL - used for downloading images etc
     static func download(url: URL) -> AnyPublisher<Data, Error> {
         return URLSession.shared.dataTaskPublisher(for: url)
+        
         // Subscribe on background thread for data downloading
             .subscribe(on: DispatchQueue.global(qos: .default))
         // Handles the response
@@ -73,6 +74,7 @@ final class NetworkingManager {
         case .finished:
             break
         case .failure(let error):
+            // Error is printed to console rather than displayed to user as this is for debugging only
             print("Decoding failed with error: \(error)")
         }
     }

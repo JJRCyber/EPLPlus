@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct EPLPlusApp: App {
     
-    @StateObject private var viewModel = TabBarViewModel()
+    @StateObject private var viewModel = StandingsViewModel()
     
     var body: some Scene {
         WindowGroup {

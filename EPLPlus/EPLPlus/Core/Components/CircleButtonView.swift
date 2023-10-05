@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-// Circle buttons used in header bars
+// Simple circle button used in header bars
+// Takes an icon name as parameter
 struct CircleButtonView: View {
     
     let iconName: String
@@ -21,7 +22,6 @@ struct CircleButtonView: View {
                 Circle()
                     .foregroundColor(Color.theme.accent)
             )
-            .shadow(color: Color.theme.secondaryText.opacity(0.25), radius: 10, x: 0, y: 0)
             .padding()
     }
 }

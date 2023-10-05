@@ -37,9 +37,8 @@
 		9BAFA26E2ABD34970067BDA0 /* TeamCrestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAFA26D2ABD34970067BDA0 /* TeamCrestViewModel.swift */; };
 		9BAFA2702ABD35900067BDA0 /* TeamCrestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAFA26F2ABD35900067BDA0 /* TeamCrestManager.swift */; };
 		9BAFA2722ABD5E740067BDA0 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAFA2712ABD5E740067BDA0 /* LocalFileManager.swift */; };
-		9BAFA2762ABD79270067BDA0 /* StandingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAFA2752ABD79270067BDA0 /* StandingsViewModel.swift */; };
 		9BCA2CE52ABC620300F199C3 /* TeamsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCA2CE42ABC620300F199C3 /* TeamsViewModel.swift */; };
-		9BCA2CE72ABD06EE00F199C3 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCA2CE62ABD06EE00F199C3 /* TabBarViewModel.swift */; };
+		9BCA2CE72ABD06EE00F199C3 /* StandingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCA2CE62ABD06EE00F199C3 /* StandingsViewModel.swift */; };
 		9BCA2CE92ABD0D5E00F199C3 /* StandingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCA2CE82ABD0D5E00F199C3 /* StandingsView.swift */; };
 		9BCA2CEB2ABD0D7500F199C3 /* StandingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCA2CEA2ABD0D7500F199C3 /* StandingsRowView.swift */; };
 		9BCA2CED2ABD101100F199C3 /* FootballDataAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCA2CEC2ABD101100F199C3 /* FootballDataAPIManager.swift */; };
@@ -78,9 +77,8 @@
 		9BAFA26D2ABD34970067BDA0 /* TeamCrestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCrestViewModel.swift; sourceTree = "<group>"; };
 		9BAFA26F2ABD35900067BDA0 /* TeamCrestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCrestManager.swift; sourceTree = "<group>"; };
 		9BAFA2712ABD5E740067BDA0 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
-		9BAFA2752ABD79270067BDA0 /* StandingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsViewModel.swift; sourceTree = "<group>"; };
 		9BCA2CE42ABC620300F199C3 /* TeamsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewModel.swift; sourceTree = "<group>"; };
-		9BCA2CE62ABD06EE00F199C3 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
+		9BCA2CE62ABD06EE00F199C3 /* StandingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsViewModel.swift; sourceTree = "<group>"; };
 		9BCA2CE82ABD0D5E00F199C3 /* StandingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsView.swift; sourceTree = "<group>"; };
 		9BCA2CEA2ABD0D7500F199C3 /* StandingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsRowView.swift; sourceTree = "<group>"; };
 		9BCA2CEC2ABD101100F199C3 /* FootballDataAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballDataAPIManager.swift; sourceTree = "<group>"; };
@@ -203,7 +201,6 @@
 			isa = PBXGroup;
 			children = (
 				9B37F5422ABAF63600043CEF /* TabBarView.swift */,
-				9BCA2CE62ABD06EE00F199C3 /* TabBarViewModel.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -238,7 +235,7 @@
 			children = (
 				9BCA2CE82ABD0D5E00F199C3 /* StandingsView.swift */,
 				9BCA2CEA2ABD0D7500F199C3 /* StandingsRowView.swift */,
-				9BAFA2752ABD79270067BDA0 /* StandingsViewModel.swift */,
+				9BCA2CE62ABD06EE00F199C3 /* StandingsViewModel.swift */,
 			);
 			path = Standings;
 			sourceTree = "<group>";
@@ -247,8 +244,8 @@
 			isa = PBXGroup;
 			children = (
 				9B37F5472ABAFA3200043CEF /* CircleButtonView.swift */,
-				9BAFA26A2ABD34730067BDA0 /* TeamBadge */,
 				9BD5E57E2ACCCF8E0040D7EA /* LoadingIndicator.swift */,
+				9BAFA26A2ABD34730067BDA0 /* TeamBadge */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -333,7 +330,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BAFA2762ABD79270067BDA0 /* StandingsViewModel.swift in Sources */,
 				9B37F5302ABAF0BF00043CEF /* EPLPlusApp.swift in Sources */,
 				9B262CB12AC51FA20020E778 /* TeamDetailView.swift in Sources */,
 				9B262CB92AC54EA60020E778 /* FavouriteTeamsContainer.xcdatamodeld in Sources */,
@@ -347,7 +343,7 @@
 				9BAE46F42ABC1EF90019349B /* TeamsRowView.swift in Sources */,
 				9B37F5432ABAF63600043CEF /* TabBarView.swift in Sources */,
 				9BAFA2632ABD27F50067BDA0 /* NetworkingManager.swift in Sources */,
-				9BCA2CE72ABD06EE00F199C3 /* TabBarViewModel.swift in Sources */,
+				9BCA2CE72ABD06EE00F199C3 /* StandingsViewModel.swift in Sources */,
 				9BCA2CE52ABC620300F199C3 /* TeamsViewModel.swift in Sources */,
 				9BD5E57F2ACCCF8E0040D7EA /* LoadingIndicator.swift in Sources */,
 				9B37F54C2ABAFB5800043CEF /* MatchesViewModel.swift in Sources */,
