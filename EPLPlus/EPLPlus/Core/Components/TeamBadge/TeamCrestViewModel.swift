@@ -10,7 +10,7 @@ import SwiftUI
 import Combine
 
 // Viewmodel for TeamCrestView
-class TeamCrestViewModel: ObservableObject {
+final class TeamCrestViewModel: ObservableObject {
     
     // Variables for badgeImage and loading status
     @Published var badgeImage: UIImage? = nil

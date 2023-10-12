@@ -40,7 +40,6 @@ final class FootballDataAPIManager {
     
     // Function to retrieve standings from API using combine
     func getStandings() {
-        print("Downloading Standings")
         guard let url = URL(string: "https://api.football-data.org/v4/competitions/PL/standings") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -62,7 +61,6 @@ final class FootballDataAPIManager {
     
     // Function to retrieve teams from API using combine
     func getTeams() {
-        print("Downloading Teams")
         guard let url = URL(string: "https://api.football-data.org/v4/competitions/PL/teams") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -82,7 +80,6 @@ final class FootballDataAPIManager {
     
     // Function to retrieve matches for a specified matchday from API using combine
     func getMatches(matchday: Int) {
-        print("Downloading Matches")
         guard let url = URL(string: "https://api.football-data.org/v4/competitions/PL/matches?matchday=\(matchday)") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "GET"

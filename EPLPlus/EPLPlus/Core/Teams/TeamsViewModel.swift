@@ -74,7 +74,7 @@ final class TeamsViewModel: BaseViewModel {
         footballDataManager.getTeams()
     }
     
-    // Returnes whether a team is favourited or not
+    // Returns whether a team is favourited or not
     func isFavouriteTeam(team: TeamDetail) -> Bool {
         return favouriteTeams.contains(where: {$0.id == team.id})
     }

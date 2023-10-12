@@ -49,7 +49,7 @@ final class FavouriteTeamsManager {
     
     // Function to add a team to CoreData by converting TeamDetail into
     // Required CoreData entity
-    public func addTeamToFavourites(team: TeamDetail) {
+    func addTeamToFavourites(team: TeamDetail) {
         let entity = TeamDetailEntity(context: container.viewContext)
         entity.id = Int32(team.id)
         entity.address = team.address
@@ -65,7 +65,7 @@ final class FavouriteTeamsManager {
     }
     
     // Removes a team from Favourites CoreData container
-    public func removeTeamFromFavourites(team: TeamDetail) {
+    func removeTeamFromFavourites(team: TeamDetail) {
         if let teamEntity = favouriteTeams.first (where: { $0.id == team.id }) {
             container.viewContext.delete(teamEntity)
             save()
