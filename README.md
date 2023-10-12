@@ -12,8 +12,8 @@ The aim of this project was to showcase retrieval of data from an API as well as
 
   
 ### How to run the app:
-Run and build the app through Xcode. It does not require any login just an active internet connection
-**Final version has been tested on Xcode 15 only**
+- Run and build the app through Xcode. It does not require any login just an active internet connection
+- **Final version has been tested on Xcode 15 only**
 
 ## Features
 - **Standings**: View a regulary updated premier league table that displays current points and other statistics 
