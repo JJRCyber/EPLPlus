@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9B262CB12AC51FA20020E778 /* TeamDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B262CB02AC51FA20020E778 /* TeamDetailView.swift */; };
-		9B262CB32AC525880020E778 /* TeamDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B262CB22AC525880020E778 /* TeamDetailViewModel.swift */; };
 		9B262CB92AC54EA60020E778 /* FavouriteTeamsContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B262CB72AC54EA60020E778 /* FavouriteTeamsContainer.xcdatamodeld */; };
 		9B262CBB2AC550B20020E778 /* FavouriteTeamsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B262CBA2AC550B20020E778 /* FavouriteTeamsManager.swift */; };
 		9B37F5302ABAF0BF00043CEF /* EPLPlusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B37F52F2ABAF0BF00043CEF /* EPLPlusApp.swift */; };
@@ -47,7 +46,6 @@
 
 /* Begin PBXFileReference section */
 		9B262CB02AC51FA20020E778 /* TeamDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailView.swift; sourceTree = "<group>"; };
-		9B262CB22AC525880020E778 /* TeamDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailViewModel.swift; sourceTree = "<group>"; };
 		9B262CB82AC54EA60020E778 /* FavouriteTeamsContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavouriteTeamsContainer.xcdatamodel; sourceTree = "<group>"; };
 		9B262CBA2AC550B20020E778 /* FavouriteTeamsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTeamsManager.swift; sourceTree = "<group>"; };
 		9B37F52C2ABAF0BF00043CEF /* EPLPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EPLPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -222,7 +220,6 @@
 				9BAE46F32ABC1EF90019349B /* TeamsRowView.swift */,
 				9BCA2CE42ABC620300F199C3 /* TeamsViewModel.swift */,
 				9B262CB02AC51FA20020E778 /* TeamDetailView.swift */,
-				9B262CB22AC525880020E778 /* TeamDetailViewModel.swift */,
 				9B4E77B72ACA85230046601A /* SquadListRowView.swift */,
 				9B4E77B92ACA8B3C0046601A /* FormView.swift */,
 				9B4E77BB2ACA8CD00046601A /* FormViewModel.swift */,
@@ -336,7 +333,6 @@
 				9B4E77C12ACB74950046601A /* LaunchView.swift in Sources */,
 				9BCA2CED2ABD101100F199C3 /* FootballDataAPIManager.swift in Sources */,
 				9BAE46F62ABC2B090019349B /* Team.swift in Sources */,
-				9B262CB32AC525880020E778 /* TeamDetailViewModel.swift in Sources */,
 				9B37F5572ABB113700043CEF /* PreviewProvider.swift in Sources */,
 				9B4E77B82ACA85230046601A /* SquadListRowView.swift in Sources */,
 				9BCA2CEB2ABD0D7500F199C3 /* StandingsRowView.swift in Sources */,

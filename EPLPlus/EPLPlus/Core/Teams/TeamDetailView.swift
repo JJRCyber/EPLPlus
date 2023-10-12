@@ -28,19 +28,16 @@ struct TeamDetailLoadingView: View {
 struct TeamDetailView: View {
     
     @ObservedObject var teamsViewModel: TeamsViewModel
-    @StateObject var viewModel: TeamDetailViewModel
+    
+    // Set initial region to UK using state rather than viewModel due to compiler warnings
+    @State var stadiumMapRegion = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(latitude: 52.3555, longitude: -1.1743),
+        span: MKCoordinateSpan(latitudeDelta: 5, longitudeDelta: 5))
     
     let team: TeamDetail
     
     // Allows dismissing of view when x button pressed
     @Environment(\.presentationMode) var presentationMode
-    
-    // Init viewModel with stadium address returned from API
-    init(teamsViewModel: TeamsViewModel, team: TeamDetail) {
-        self.team = team
-        self.teamsViewModel = teamsViewModel
-        self._viewModel = StateObject(wrappedValue: TeamDetailViewModel(address: team.address))
-    }
     
     // View main sections
     var body: some View {
@@ -60,6 +57,12 @@ struct TeamDetailView: View {
                     squadSection
                     Spacer()
                 }
+            }
+
+        }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                centerOnStadium()
             }
 
         }
@@ -113,7 +116,7 @@ struct TeamDetailView: View {
     // Displays stadium name and address below
     var venueSection: some View {
         Group {
-            Map(coordinateRegion: $viewModel.mapRegion)
+            Map(coordinateRegion: $stadiumMapRegion)
                 .cornerRadius(10)
                 .frame(height: 200)
                 .allowsHitTesting(false)
@@ -164,6 +167,35 @@ struct TeamDetailView: View {
                 }
             }
             .frame(maxHeight: 250)
+
+        }
+    }
+    
+    // Uses MKLocalSearch to search for address of stadium
+    // If address is found centers the mapRegion on the returned region
+    // Function would usually be part of viewModel but this causes compiler warning for:
+    // "Publishing changes from within view updates is not allowed, this will cause undefined behavior."
+    private func centerOnStadium() {
+        let searchRequest = MKLocalSearch.Request()
+        searchRequest.naturalLanguageQuery = team.address
+        
+        let addressSearch = MKLocalSearch(request: searchRequest)
+        
+        addressSearch.start { response, error in
+            guard let response = response else {
+                // If search is not succesfull print debugging message and leave map region as UK
+                print("Could not complete address search: \(String(describing: error?.localizedDescription))")
+                return
+            }
+            // If search succesful modify the zoom of the area and set mapRegion to returned region
+            var region = response.boundingRegion
+            let zoomFactor: Double = 0.8
+            region.span.latitudeDelta *= zoomFactor
+            region.span.longitudeDelta *= zoomFactor
+            
+            withAnimation(.easeIn) {
+                self.stadiumMapRegion = region
+            }
 
         }
     }
