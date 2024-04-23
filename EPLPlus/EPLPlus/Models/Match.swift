@@ -17,6 +17,8 @@ struct Matchday: Codable {
 
 // New comment
 
+// New comment 2
+
 // Values for matchday of request and season
 // Will always be current season
 struct Filters: Codable {
